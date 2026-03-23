@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 34 25% 91%; /* #EDE5DA */
+    --foreground: 33 50% 6%; /* #1A1208 */
+    --card: 0 0% 100%;
+    --card-foreground: 33 50% 6%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 33 50% 6%;
+    --primary: 27 54% 53%; /* #C9864A */
+    --primary-foreground: 34 25% 97%;
+    --secondary: 33 24% 94%;
+    --secondary-foreground: 33 50% 6%;
+    --muted: 33 24% 94%;
+    --muted-foreground: 33 23% 38%;
+    --accent: 19 84% 39%; /* #B74610 */
+    --accent-foreground: 34 25% 97%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 31 24% 86%; /* #E8DDD2 */
+    --input: 31 24% 86%;
+    --ring: 27 54% 53%;
+    --radius: 0.75rem;
+    
+    --sidebar-background: 29 25% 14%; /* #2B1F14 */
+    --sidebar-foreground: 34 25% 91%;
+    --sidebar-primary: 27 54% 53%;
+    --sidebar-accent: 33 20% 21%;
+    --sidebar-border: 29 25% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
+  }
+  html {
+    @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased selection:bg-primary/20;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gpu-render {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media print {
+  .no-print, 
+  header, 
+  footer, 
+  button, 
+  [role="tablist"],
+  .floating-toolbar,
+  .editor-sidebar {
+    display: none !important;
+  }
+
+  body, html {
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page-container {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+    page-break-after: avoid;
+    page-break-before: avoid;
+  }
+
+  /* Force single page layout if possible */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}

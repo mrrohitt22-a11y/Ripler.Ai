@@ -1,0 +1,520 @@
+{
+  "entities": {
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Represents a user's core profile information and serves as the central hub for all resume-related data. It links to an external authentication system and a subscription plan.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the UserProfile entity."
+        },
+        "authUserId": {
+          "type": "string",
+          "description": "Reference to the unique identifier of the user in the external authentication system (e.g., Google's user ID). (Relationship: External Auth System 1:1 UserProfile)"
+        },
+        "fullName": {
+          "type": "string",
+          "description": "The full name of the user as it appears on the resume."
+        },
+        "role": {
+          "type": "string",
+          "description": "The primary professional role or designation of the user."
+        },
+        "profileSummary": {
+          "type": "string",
+          "description": "A brief overview or summary of the user's professional background and career goals."
+        },
+        "avatarInitials": {
+          "type": "string",
+          "description": "Initials to be displayed in the avatar, typically derived from the full name."
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "The user's contact phone number."
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's contact email address.",
+          "format": "email"
+        },
+        "address": {
+          "type": "string",
+          "description": "The user's physical address or location for contact purposes."
+        }
+      },
+      "required": [
+        "id",
+        "authUserId",
+        "fullName",
+        "role",
+        "email"
+      ]
+    },
+    "Skill": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Skill",
+      "type": "object",
+      "description": "Represents a specific skill possessed by the user, along with their proficiency level.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Skill entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this skill belongs to. (Relationship: UserProfile 1:N Skill)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the skill (e.g., 'Digital Marketing', 'Data Entry')."
+        },
+        "proficiency": {
+          "type": "number",
+          "description": "The proficiency level for the skill, typically as a percentage (0-100)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name",
+        "proficiency"
+      ]
+    },
+    "Language": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Language",
+      "type": "object",
+      "description": "Represents a language the user knows and their fluency level.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Language entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this language belongs to. (Relationship: UserProfile 1:N Language)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the language (e.g., 'English', 'Hindi')."
+        },
+        "proficiencyLevel": {
+          "type": "number",
+          "description": "The proficiency level represented by a number (e.g., 1-5 dots)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name",
+        "proficiencyLevel"
+      ]
+    },
+    "Education": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Education",
+      "type": "object",
+      "description": "Details about the user's educational background.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Education entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this education entry belongs to. (Relationship: UserProfile 1:N Education)"
+        },
+        "degree": {
+          "type": "string",
+          "description": "The degree or qualification obtained (e.g., 'Senior Secondary')."
+        },
+        "description": {
+          "type": "string",
+          "description": "Additional description about the education, such as '12th Pass'."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "degree",
+        "description"
+      ]
+    },
+    "ToolPlatform": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ToolPlatform",
+      "type": "object",
+      "description": "A tool or platform the user is proficient with.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ToolPlatform entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this tool/platform belongs to. (Relationship: UserProfile 1:N ToolPlatform)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the tool or platform (e.g., 'Facebook Ads', 'ChatGPT / AI')."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "name"
+      ]
+    },
+    "WorkExperience": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "WorkExperience",
+      "type": "object",
+      "description": "Details about the user's professional work experience.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the WorkExperience entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this work experience belongs to. (Relationship: UserProfile 1:N WorkExperience)"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "The name of the company or organization."
+        },
+        "jobTitle": {
+          "type": "string",
+          "description": "The user's job title at this company."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The start date of the employment (e.g., '2025' or 'YYYY-MM-DD')."
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The end date of the employment (e.g., 'Present', '2 Years', or 'YYYY-MM-DD')."
+        },
+        "descriptionPoints": {
+          "type": "array",
+          "description": "An array of bullet points describing responsibilities and achievements.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "companyName",
+        "jobTitle",
+        "startDate",
+        "descriptionPoints"
+      ]
+    },
+    "Strength": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Strength",
+      "type": "object",
+      "description": "A key strength or personal attribute of the user.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Strength entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile this strength belongs to. (Relationship: UserProfile 1:N Strength)"
+        },
+        "label": {
+          "type": "string",
+          "description": "The descriptive label for the strength (e.g., 'Fast Learner & Adaptable')."
+        },
+        "icon": {
+          "type": "string",
+          "description": "A representation of the icon for the strength (e.g., '⚡' emoji or a simple identifier)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "label",
+        "icon"
+      ]
+    },
+    "SubscriptionPlan": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SubscriptionPlan",
+      "type": "object",
+      "description": "Defines the available pricing plans for the application, outlining features and costs.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the SubscriptionPlan entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the subscription plan (e.g., 'Free', 'Pro', 'Premium')."
+        },
+        "description": {
+          "type": "string",
+          "description": "A brief description of the plan's offerings."
+        },
+        "monthlyPrice": {
+          "type": "number",
+          "description": "The monthly price of the subscription plan."
+        },
+        "annualPrice": {
+          "type": "number",
+          "description": "The annual price of the subscription plan."
+        },
+        "features": {
+          "type": "array",
+          "description": "An array of strings listing the key features included in this plan.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "monthlyPrice",
+        "annualPrice",
+        "features"
+      ]
+    },
+    "UserSubscription": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserSubscription",
+      "type": "object",
+      "description": "Tracks a user's current or past subscription details, linking them to a specific plan.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the UserSubscription entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to the UserProfile who holds this subscription. (Relationship: UserProfile 1:N UserSubscription)"
+        },
+        "planId": {
+          "type": "string",
+          "description": "Reference to the SubscriptionPlan the user is subscribed to. (Relationship: SubscriptionPlan 1:N UserSubscription)"
+        },
+        "startDate": {
+          "type": "string",
+          "description": "The date and time when the subscription became active.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "The date and time when the subscription is set to expire. Null if the subscription is perpetual or has no fixed end date.",
+          "format": "date-time"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates whether the subscription is currently active."
+        },
+        "paymentStatus": {
+          "type": "string",
+          "description": "The status of the latest payment for this subscription (e.g., 'Paid', 'Pending', 'Failed', 'Cancelled')."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "planId",
+        "startDate",
+        "isActive",
+        "paymentStatus"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Stores the core profile information for each user. The document ID (`{userId}`) must match the `request.auth.uid` of the authenticated user. Includes `id` and `authUserId` fields, both denormalized to match the document ID for direct authorization.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the authenticated user, corresponding to Firebase Authentication's UID."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/skills/{skillId}",
+        "definition": {
+          "entityName": "Skill",
+          "schema": {
+            "$ref": "#/backend/entities/Skill"
+          },
+          "description": "Stores individual skill entries for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this skill."
+            },
+            {
+              "name": "skillId",
+              "description": "The unique identifier for a specific skill document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/languages/{languageId}",
+        "definition": {
+          "entityName": "Language",
+          "schema": {
+            "$ref": "#/backend/entities/Language"
+          },
+          "description": "Stores language proficiency entries for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this language entry."
+            },
+            {
+              "name": "languageId",
+              "description": "The unique identifier for a specific language document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/education/{educationId}",
+        "definition": {
+          "entityName": "Education",
+          "schema": {
+            "$ref": "#/backend/entities/Education"
+          },
+          "description": "Stores educational background entries for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this education entry."
+            },
+            {
+              "name": "educationId",
+              "description": "The unique identifier for a specific education document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/tool_platforms/{toolPlatformId}",
+        "definition": {
+          "entityName": "ToolPlatform",
+          "schema": {
+            "$ref": "#/backend/entities/ToolPlatform"
+          },
+          "description": "Stores tool and platform proficiencies for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this tool/platform entry."
+            },
+            {
+              "name": "toolPlatformId",
+              "description": "The unique identifier for a specific tool/platform document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/work_experiences/{workExperienceId}",
+        "definition": {
+          "entityName": "WorkExperience",
+          "schema": {
+            "$ref": "#/backend/entities/WorkExperience"
+          },
+          "description": "Stores professional work experience entries for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this work experience entry."
+            },
+            {
+              "name": "workExperienceId",
+              "description": "The unique identifier for a specific work experience document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/strengths/{strengthId}",
+        "definition": {
+          "entityName": "Strength",
+          "schema": {
+            "$ref": "#/backend/entities/Strength"
+          },
+          "description": "Stores key strengths or attributes for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this strength entry."
+            },
+            {
+              "name": "strengthId",
+              "description": "The unique identifier for a specific strength document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/subscription_plans/{planId}",
+        "definition": {
+          "entityName": "SubscriptionPlan",
+          "schema": {
+            "$ref": "#/backend/entities/SubscriptionPlan"
+          },
+          "description": "Stores static definitions of available subscription plans. This collection is globally readable (e.g., for display on a pricing page) and does not contain user-specific authorization data.",
+          "params": [
+            {
+              "name": "planId",
+              "description": "The unique identifier for a specific subscription plan."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/subscriptions/{userSubscriptionId}",
+        "definition": {
+          "entityName": "UserSubscription",
+          "schema": {
+            "$ref": "#/backend/entities/UserSubscription"
+          },
+          "description": "Tracks the active and past subscription details for a specific user. Includes denormalized 'userId' field for authorization independence, linking directly to the parent UserProfile. Also references the `planId` from the /subscription_plans collection.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier of the UserProfile owner of this subscription."
+            },
+            {
+              "name": "userSubscriptionId",
+              "description": "The unique identifier for a specific user subscription record."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed following the core principles of Authorization Independence, Structural Segregation, and Access Modeling, explicitly addressing the need for secure, scalable, and debuggable security rules.The central hub for all user-specific data is the `/users/{userId}` collection, where each document represents a `UserProfile`. The `userId` in the path is directly tied to `request.auth.uid`, ensuring that users can only access their own top-level profile information.All related resume data entities (Skills, Languages, Education, ToolPlatforms, WorkExperiences, Strengths) are stored as subcollections under their respective `UserProfile` document. For example, a user's skills are found at `/users/{userId}/skills/{skillId}`. To achieve **Authorization Independence**, a critical mandate, every document within these subcollections (`Skill`, `Language`, `Education`, `ToolPlatform`, `WorkExperience`, `Strength`, `UserSubscription`) includes a denormalized `userId` field. This `userId` field directly mirrors the `userId` in the parent path, allowing Firestore security rules to evaluate access purely based on the document's own data (`resource.data.userId == request.auth.uid`) without needing to perform costly and complex `get()` calls to parent documents. This approach maintains atomicity for write operations involving subcollections and significantly simplifies rule logic, improving debuggability.For **QAPs (Rules are not Filters)**, this structure naturally supports secure list operations. A user can only `list` documents within their own `/users/{userId}/...` path. For instance, a query to `/users/{request.auth.uid}/skills` will only return the authenticated user's skills, as enforced by rules like `allow read, write: if request.auth.uid == userId;` on the skill documents. The `userId` in the path's wildcard segment directly correlates to `request.auth.uid`, making all list queries inherently secure and efficient.The `SubscriptionPlan` entities are stored in a top-level collection, `/subscription_plans/{planId}`, separate from user data. This adheres to **Structural Segregation**, as subscription plans are static, publicly viewable (or viewable by any authenticated user), and don't require the same strict `userId`-based access control as private user data. This segregation keeps their security posture homogeneous and simpler to manage. The `UserSubscription` entity, however, is user-specific and placed under `/users/{userId}/subscriptions/{userSubscriptionId}`, with the denormalized `userId` field for authorization independence.This design strategy ensures that all user-owned data is directly linked to the authenticating user via a predictable path and denormalized fields, making authorization robust and easy to audit, while public data remains globally accessible."
+  }
+}

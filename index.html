@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ResumeAI — India's Top AI Resume Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">
+    <span>ResumeAI</span><span class="dot">.</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#templates">Templates</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#" onclick="openModal('login')">Contact Us</a></li>
+    <li><a href="#" class="btn-login" onclick="openModal('login'); return false;">Login</a></li>
+  </ul>
+  <div class="nav-mobile-btn">
+    <a href="#" class="btn-login" style="border:1.5px solid #e8eaf0;padding:6px 16px;border-radius:8px;font-weight:600;text-decoration:none;color:#1a1a2e;font-size:0.88rem;" onclick="openModal('login'); return false;">Login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><div class="dot-pulse"></div>⚡ AI Powered • Trusted by 50,000+ job seekers</div>
+    <h1>India's #1 <span class="gradient-text">AI Resume</span><br/>Builder</h1>
+    <p>Get the job 2x as fast. Use AI-powered templates and step-by-step recommendations to create a winning resume — in under 5 minutes.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary" onclick="openModal('signup'); return false;">📄 Create New Resume</a>
+      <a href="#" class="btn-outline" onclick="openModal('signup'); return false;">✨ Optimize My Resume</a>
+    </div>
+    <div class="trust-row">
+      <div class="avatars">
+        <span>RK</span><span>PM</span><span>AS</span><span>VJ</span><span>NK</span>
+      </div>
+      <div>
+        <div class="stars">★★★★★</div>
+        <div class="trust-text"><strong>4.9/5</strong> from 12,000+ reviews</div>
+      </div>
+    </div>
+    <div class="trustpilot-row">
+      <span>EXCELLENT</span>
+      <span class="trustpilot-score">4.8</span>
+      <span class="tp-stars">★★★★★</span>
+      <span>4.8 out of 5 based on 38,365 reviews on</span>
+      <strong style="color:#00B67A;">Trustpilot</strong>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="floating-chip chip-1">🤖 AI Writing...</div>
+    <div class="resume-card">
+      <div class="ats-badge">✅ ATS Score: 94/100</div>
+      <div class="resume-avatar"></div>
+      <div class="resume-name">Rahul Kumar</div>
+      <div class="resume-title">Senior Software Engineer</div>
+      <div class="resume-divider"></div>
+      <div class="resume-section-label">Experience</div>
+      <div class="resume-line active"></div>
+      <div class="resume-line w90"></div>
+      <div class="resume-line w80"></div>
+      <div class="resume-divider"></div>
+      <div class="resume-section-label">Education</div>
+      <div class="resume-line w100"></div>
+      <div class="resume-line w60"></div>
+      <div class="resume-divider"></div>
+      <div class="resume-section-label">Skills</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">AWS</span>
+      </div>
+    </div>
+    <div class="floating-chip chip-2">📈 +68% Interview Rate</div>
+  </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="results-section">
+  <div class="result-left reveal">
+    <div class="section-tag">Why ResumeAI?</div>
+    <div class="result-header">
+      <h2 class="section-title">Create a resume<br/><span class="hl">that gets results</span></h2>
+      <a href="#templates" class="choose-btn">Choose a Template →</a>
+    </div>
+    <div class="result-steps">
+      <div class="result-step reveal reveal-delay-1">
+        <div class="step-icon-wrap">📋</div>
+        <div class="step-text">
+          <h4>Recruiter-Approved Resume</h4>
+          <p>We work with recruiters to design resume templates that format automatically and pass every ATS scan.</p>
+        </div>
+      </div>
+      <div class="result-step reveal reveal-delay-2">
+        <div class="step-icon-wrap">⚡</div>
+        <div class="step-text">
+          <h4>Finish Your Resume in 15 Minutes</h4>
+          <p>ResumeAI helps you tackle your work experience by reminding you what you did at your job — powered by AI.</p>
+        </div>
+      </div>
+      <div class="result-step reveal reveal-delay-3">
+        <div class="step-icon-wrap">🎯</div>
+        <div class="step-text">
+          <h4>Land an Interview</h4>
+          <p>We suggest the skills you should add. It has helped over a million people get interviews at top companies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="result-right reveal reveal-delay-2">
+    <div style="background:var(--bg);border-radius:16px;width:320px;padding:28px;border:1px solid var(--border);box-shadow:0 8px 40px rgba(59,91,219,0.08);">
+      <div style="display:flex;gap:12px;margin-bottom:16px;align-items:center;">
+        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));"></div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-weight:700;font-size:1rem;">Priya Sharma</div>
+          <div style="font-size:0.75rem;color:var(--blue);font-weight:600;">Marketing Manager</div>
+        </div>
+        <div style="margin-left:auto;background:#E6F9F0;color:#2F9E44;padding:4px 10px;border-radius:20px;font-size:0.7rem;font-weight:700;">ATS ✅</div>
+      </div>
+      <div style="height:1px;background:var(--border);margin-bottom:12px;"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Summary</div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:4px;width:100%;"></div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:4px;width:90%;"></div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:12px;width:70%;"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Experience</div>
+      <div style="height:5px;background:#C3CBFF;border-radius:3px;margin-bottom:4px;width:100%;"></div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:4px;width:85%;"></div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:4px;width:95%;"></div>
+      <div style="height:5px;background:var(--border);border-radius:3px;margin-bottom:12px;width:60%;"></div>
+      <div style="font-size:0.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Skills</div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;">
+        <span style="background:var(--blue-light);color:var(--blue);padding:2px 8px;border-radius:4px;font-size:0.62rem;font-weight:600;">SEO</span>
+        <span style="background:var(--blue-light);color:var(--blue);padding:2px 8px;border-radius:4px;font-size:0.62rem;font-weight:600;">Analytics</span>
+        <span style="background:var(--blue-light);color:var(--blue);padding:2px 8px;border-radius:4px;font-size:0.62rem;font-weight:600;">Content</span>
+        <span style="background:var(--blue-light);color:var(--blue);padding:2px 8px;border-radius:4px;font-size:0.62rem;font-weight:600;">Ads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES GRID -->
+<section class="features-section" id="features">
+  <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Powerful Features</div>
+    <h2 class="section-title">6 features to boost<br/><span class="hl">your job search</span></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal reveal-delay-1" onclick="openModal('signup')">
+      <div class="feature-card-img">🎨</div>
+      <div class="feature-card-body">
+        <h4>35+ Template Designs</h4>
+        <p>Recruiter-approved, ATS-friendly templates for every industry and experience level.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-2" onclick="openModal('signup')">
+      <div class="feature-card-img">🤖</div>
+      <div class="feature-card-body">
+        <h4>Enhance with AI</h4>
+        <p>AI rewrites your bullet points, strengthens your summary, and optimizes for keywords.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-3" onclick="openModal('signup')">
+      <div class="feature-card-img">📊</div>
+      <div class="feature-card-body">
+        <h4>Resume Review & ATS Score</h4>
+        <p>Get a live ATS score out of 100 and actionable suggestions to improve your resume.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-1" onclick="openModal('signup')">
+      <div class="feature-card-img">🤖</div>
+      <div class="feature-card-body">
+        <h4>AI Cover Letter Builder</h4>
+        <p>Generate a tailored cover letter for any job description in under 30 seconds.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-2" onclick="openModal('signup')">
+      <div class="feature-card-img">🌐</div>
+      <div class="feature-card-body">
+        <h4>Resume Website</h4>
+        <p>Turn your resume into a shareable online profile — perfect for LinkedIn and portfolios.</p>
+      </div>
+    </div>
+    <div class="feature-card reveal reveal-delay-3" onclick="openModal('signup')">
+      <div class="feature-card-img">📍</div>
+      <div class="feature-card-body">
+        <h4>Resume Tracking</h4>
+        <p>Track where you applied, see who viewed your resume, and follow up at the right time.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px;" class="reveal">
+    <a href="#" class="btn-primary" onclick="openModal('signup'); return false;" style="display:inline-flex;">Choose a Template →</a>
+  </div>
+</section>
+
+<!-- TEMPLATES -->
+<section class="templates-section" id="templates">
+  <div class="reveal" style="text-align:center;margin-bottom:32px;">
+    <div class="section-tag">Templates</div>
+    <h2 class="section-title">35+ Professional <span class="hl">Resume Templates</span></h2>
+    <p class="section-sub" style="margin:8px auto 0;text-align:center;">ATS-friendly designs loved by recruiters at top companies</p>
+  </div>
+  <div class="template-grid">
+    <div class="template-card reveal reveal-delay-1">
+      <div class="template-inner">
+        <div style="height:8px;background:var(--blue);margin:-14px -14px 10px;border-radius:10px 10px 0 0;"></div>
+        <div class="t-header"><div class="t-avatar blue"></div><div class="t-title-lines"><div class="t-line dark" style="width:60%;height:6px;background:#1A1A2E;"></div><div class="t-line" style="width:40%;background:var(--blue);"></div></div></div>
+        <div class="t-body-lines"><div class="t-line w100"></div><div class="t-line w80"></div><div class="t-line w90"></div></div>
+        <div class="t-divider"></div>
+        <div class="t-body-lines"><div class="t-line w100"></div><div class="t-line w60"></div></div>
+      </div>
+      <div class="template-label">Professional Blue</div>
+      <div class="template-overlay"><button onclick="openModal('signup')">Use Template</button></div>
+    </div>
+    <div class="template-card reveal reveal-delay-2">
+      <div class="template-inner">
+        <div style="display:flex;gap:8px;">
+          <div style="width:35%;background:linear-gradient(180deg,#1A1A2E,#2D1B69);border-radius:6px 0 0 6px;padding:8px;">
+            <div class="t-avatar" style="background:rgba(255,255,255,0.2);margin-bottom:6px;"></div>
+            <div style="height:4px;background:rgba(255,255,255,0.3);border-radius:3px;margin-bottom:3px;"></div>
+            <div style="height:4px;background:rgba(255,255,255,0.2);border-radius:3px;width:80%;"></div>
+          </div>
+          <div style="flex:1;padding-top:8px;">
+            <div class="t-line dark" style="background:#1A1A2E;height:6px;width:80%;margin-bottom:4px;"></div>
+            <div class="t-line w60" style="background:var(--purple);height:4px;margin-bottom:8px;"></div>
+            <div class="t-line w100"></div><div class="t-line w80"></div><div class="t-line w90"></div>
+          </div>
+        </div>
+      </div>
+      <div class="template-label">Modern Dark</div>
+      <div class="template-overlay"><button onclick="openModal('signup')">Use Template</button></div>
+    </div>
+    <div class="template-card reveal reveal-delay-3">
+      <div class="template-inner">
+        <div style="text-align:center;margin-bottom:10px;">
+          <div class="t-avatar green" style="margin:0 auto 6px;"></div>
+          <div class="t-line dark" style="background:#1A1A2E;height:6px;width:60%;margin:0 auto 4px;"></div>
+          <div class="t-line" style="background:#2F9E44;height:4px;width:40%;margin:0 auto;"></div>
+        </div>
+        <div style="height:1px;background:#2F9E44;margin-bottom:8px;"></div>
+        <div class="t-body-lines"><div class="t-line w100"></div><div class="t-line w80"></div><div class="t-line w90"></div></div>
+      </div>
+      <div class="template-label">Clean Minimal</div>
+      <div class="template-overlay"><button onclick="openModal('signup')">Use Template</button></div>
+    </div>
+    <div class="template-card reveal reveal-delay-4">
+      <div class="template-inner">
+        <div style="background:linear-gradient(135deg,var(--blue),var(--purple));margin:-14px -14px 10px;padding:12px;border-radius:10px 10px 0 0;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div class="t-avatar" style="background:rgba(255,255,255,0.3);"></div>
+            <div><div style="height:5px;background:rgba(255,255,255,0.9);border-radius:3px;width:70px;margin-bottom:3px;"></div><div style="height:4px;background:rgba(255,255,255,0.5);border-radius:3px;width:50px;"></div></div>
+          </div>
+        </div>
+        <div class="t-body-lines"><div class="t-line w100"></div><div class="t-line w80"></div></div>
+        <div class="t-divider"></div>
+        <div class="t-body-lines"><div class="t-line w100"></div><div class="t-line w70"></div></div>
+      </div>
+      <div class="template-label">Executive Pro</div>
+      <div class="template-overlay"><button onclick="openModal('signup')">Use Template</button></div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:28px;" class="reveal">
+    <a href="#" onclick="openModal('signup'); return false;" style="color:var(--blue);font-weight:700;font-size:0.9rem;text-decoration:none;">View All 35+ Templates →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item reveal">
+      <div class="stat-num"><span id="c1">0</span>K+</div>
+      <div class="stat-label">Resumes Created</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-1">
+      <div class="stat-num"><span id="c2">0</span> Mins</div>
+      <div class="stat-label">Average Build Time</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-2">
+      <div class="stat-num"><span id="c3">0</span>%</div>
+      <div class="stat-label">Interview Rate Increase</div>
+    </div>
+    <div class="stat-item reveal reveal-delay-3">
+      <div class="stat-num">#<span id="c4">0</span></div>
+      <div class="stat-label">Rated Resume Tool India</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="reveal" style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Success Stories</div>
+    <h2 class="section-title">Real People. <span class="hl">Real Results.</span></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"Got hired at TCS within 2 weeks of using this tool! The AI bullet points were exactly what I needed. My resume went from generic to outstanding."</div>
+      <div class="test-author"><div class="test-avatar">RK</div><div><div class="test-name">Rahul Kumar</div><div class="test-role">Software Engineer, TCS • Delhi</div></div></div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"As a fresher, I had no idea how to write a resume. ResumeAI did everything for me automatically. Got 3 interview calls in the first week!"</div>
+      <div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#C2255C,#E64980);">PM</div><div><div class="test-name">Priya Mehta</div><div class="test-role">Marketing Executive • Mumbai</div></div></div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"The ATS score feature helped me understand exactly why I was getting rejected. Fixed my resume in 10 minutes and got a callback from Infosys!"</div>
+      <div class="test-author"><div class="test-avatar" style="background:linear-gradient(135deg,#E67700,#F59F00);">AS</div><div><div class="test-name">Amit Singh</div><div class="test-role">Data Analyst, Infosys • Bangalore</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="companies-section">
+  <div class="companies-label">Our customers have been hired by →</div>
+  <div class="companies-row">
+    <div class="company-logo">HDFC BANK</div>
+    <div class="company-logo">TECH MAHINDRA</div>
+    <div class="company-logo">genpact</div>
+    <div class="company-logo">accenture</div>
+    <div class="company-logo">Deloitte</div>
+    <div class="company-logo">WIPRO</div>
+    <div class="company-logo">INFOSYS</div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <h2 class="reveal">Your Next Job Starts<br/>With a Great Resume</h2>
+  <p class="reveal reveal-delay-1">Join 50,000+ job seekers who built their winning resume with ResumeAI</p>
+  <a href="#" class="btn-white reveal reveal-delay-2" onclick="openModal('signup'); return false;">Build My Resume Now — It's Free →</a>
+  <div class="cta-note reveal reveal-delay-3">No credit card required • Takes under 5 minutes • 100% Free to start</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-logo-text">ResumeAI<span style="color:var(--accent);">.</span></span>
+      <div class="footer-tagline">India's #1 AI-powered resume builder. Build ATS-friendly resumes in minutes and land your dream job faster.</div>
+      <div style="display:flex;gap:10px;margin-top:4px;">
+        <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.8rem;border:1px solid rgba(255,255,255,0.15);padding:5px 10px;border-radius:6px;transition:all 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">LinkedIn</a>
+        <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.8rem;border:1px solid rgba(255,255,255,0.15);padding:5px 10px;border-radius:6px;transition:all 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Twitter</a>
+        <a href="#" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.8rem;border:1px solid rgba(255,255,255,0.15);padding:5px 10px;border-radius:6px;transition:all 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Instagram</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-h">Product</div>
+      <ul class="footer-links">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Templates</a></li>
+        <li><a href="#">ATS Score</a></li>
+        <li><a href="#">Cover Letter</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-h">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 ResumeAI. All rights reserved.</div>
+    <div>Made with ❤️ in India <span class="india-flag">🇮🇳</span></div>
+  </div>
+</footer>
+
+<!-- LOGIN / SIGNUP MODAL -->
+<div class="modal-overlay" id="authModal" onclick="closeModal(event)">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" onclick="document.getElementById('authModal').classList.remove('open')">✕</button>
+    <div class="modal-logo"><span>ResumeAI</span><span style="-webkit-text-fill-color:var(--accent);">.</span></div>
+    <h3 id="modalTitle">Welcome Back 👋</h3>
+    <div class="modal-sub" id="modalSub">Sign in to continue building your resume</div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin" onclick="switchTab('login')">Login</button>
+      <button class="modal-tab" id="tabSignup" onclick="switchTab('signup')">Sign Up Free</button>
+    </div>
+    <div id="loginForm">
+      <div class="modal-input-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="yourname@email.com"/>
+      </div>
+      <div class="modal-input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password"/>
+      </div>
+      <button class="modal-submit">Login to ResumeAI →</button>
+      <div class="modal-footer-text">Don't have an account? <a href="#" onclick="switchTab('signup'); return false;">Sign up free</a></div>
+    </div>
+    <div id="signupForm" style="display:none;">
+      <div class="modal-input-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Rahul Kumar"/>
+      </div>
+      <div class="modal-input-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="yourname@email.com"/>
+      </div>
+      <div class="modal-input-group">
+        <label>Password</label>
+        <input type="password" placeholder="Create a password"/>
+      </div>
+      <button class="modal-submit">Create Free Account →</button>
+      <div class="modal-footer-text">Already have an account? <a href="#" onclick="switchTab('login'); return false;">Login</a></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
