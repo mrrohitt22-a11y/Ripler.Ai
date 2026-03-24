@@ -13,7 +13,7 @@ export function LandingNav({ onOpenModal }: Props) {
 
   return (
     <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
-      <a className="nav-logo" href="#"><span>ResumeAI</span><span className="dot">.</span></a>
+      <a className="nav-logo" href="#"><span>Ripler</span><span className="dot">.</span></a>
       <ul className="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#templates">Templates</a></li>

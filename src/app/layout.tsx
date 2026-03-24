@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { FirebaseClientProvider } from "@/firebase/client-provider"
 
 export const metadata: Metadata = {
-  title: 'ResumeAI — India\'s Top AI Resume Builder',
-  description: 'Build ATS-friendly resumes in minutes with AI. Get hired 2x faster with ResumeAI.',
+  title: 'Ripler — India\'s Top AI Resume Builder',
+  description: 'Build ATS-friendly resumes in minutes with AI. Get hired 2x faster with Ripler.',
 };
 
 export default function RootLayout({

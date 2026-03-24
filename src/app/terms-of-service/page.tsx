@@ -15,7 +15,7 @@ export default function TermsOfService() {
         <h1 className="text-3xl font-bold mb-6 font-['Sora'] text-[#1A1A2E]">Terms of Service</h1>
         <div className="space-y-5 text-[0.95rem] leading-relaxed text-[#5C5F77]">
           <p><strong>Last Updated:</strong> March 2026</p>
-          <p>Welcome to ResumeAI! These terms govern your use of our resume builder website and services. By accessing or using our services, you agree to comply with and be bound by these Terms.</p>
+          <p>Welcome to Ripler! These terms govern your use of our resume builder website and services. By accessing or using our services, you agree to comply with and be bound by these Terms.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">1. Use of the Services</h2>
           <p>You may use our services for personal, non-commercial purposes to create and manage professional resumes. You agree not to upload any illegal, defamatory, or harmful content into our platform.</p>
@@ -24,7 +24,7 @@ export default function TermsOfService() {
           <p>To use certain features, you must register for an account. It is your responsibility to safeguard your password and account credentials. We reserve the right to suspend or terminate accounts that violate our terms.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">3. Intellectual Property</h2>
-          <p>The templates, designs, generated layouts, and software platform are the intellectual property of ResumeAI. The content and text of the resume you generate remain yours.</p>
+          <p>The templates, designs, generated layouts, and software platform are the intellectual property of Ripler. The content and text of the resume you generate remain yours.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">4. Disclaimer of Warranties</h2>
           <p>The services are provided "as is" and without warranties of any kind. We do not guarantee that your use of the website will land you a job or interview, although our AI tools are designed to maximize your chances.</p>

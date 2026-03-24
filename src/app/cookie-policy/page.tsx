@@ -20,7 +20,7 @@ export default function CookiePolicy() {
           <p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to the owners of the site.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">2. How We Use Cookies</h2>
-          <p>ResumeAI uses cookies to enhance your experience. Specifically, we use them for:</p>
+          <p>Ripler uses cookies to enhance your experience. Specifically, we use them for:</p>
           <ul className="list-disc pl-6 space-y-2">
             <li><strong>Authentication:</strong> To keep you logged in to your account securely.</li>
             <li><strong>Preferences:</strong> To remember your site preferences, like light/dark mode or font sizes.</li>
@@ -28,7 +28,7 @@ export default function CookiePolicy() {
           </ul>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">3. Managing Cookies</h2>
-          <p>You can control and manage cookies through your browser settings. Please note that removing or blocking cookies can impact your user experience, and parts of the ResumeAI service (like keeping you logged in) may no longer fully function.</p>
+          <p>You can control and manage cookies through your browser settings. Please note that removing or blocking cookies can impact your user experience, and parts of the Ripler service (like keeping you logged in) may no longer fully function.</p>
         </div>
       </div>
     </div>

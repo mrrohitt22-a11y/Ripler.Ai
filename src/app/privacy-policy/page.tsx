@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         <h1 className="text-3xl font-bold mb-6 font-['Sora'] text-[#1A1A2E]">Privacy Policy</h1>
         <div className="space-y-5 text-[0.95rem] leading-relaxed text-[#5C5F77]">
           <p><strong>Last Updated:</strong> March 2026</p>
-          <p>At ResumeAI, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our AI resume building services.</p>
+          <p>At Ripler, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our AI resume building services.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">1. Information We Collect</h2>
           <p>We collect personal information that you voluntarily provide to us when you register on the website, express an interest in obtaining information about us or our products and services, or otherwise when you contact us. This includes your name, email address, phone number, and professional history that you input into your resume.</p>
@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
           <p>We use administrative, technical, and physical security measures to help protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure.</p>
           
           <h2 className="text-xl font-bold text-[#1A1A2E] mt-8 mb-3">5. Contact Us</h2>
-          <p>If you have questions or comments about this Privacy Policy, please contact us at <strong>privacy@resumeai.in</strong>.</p>
+          <p>If you have questions or comments about this Privacy Policy, please contact us at <strong>privacy@ripler.ai</strong>.</p>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ export function AuthModal({ isOpen, activeTab, onClose, onSwitchTab, onGoogleLog
     <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
       <div className="modal" style={{position:'relative'}}>
         <button className="modal-close" onClick={onClose}>✕</button>
-        <div className="modal-logo"><span>ResumeAI</span><span style={{WebkitTextFillColor:'var(--accent)'}}>.</span></div>
+        <div className="modal-logo"><span>Ripler</span><span style={{WebkitTextFillColor:'var(--accent)'}}>.</span></div>
         <h3>{isLogin ? 'Welcome Back 👋' : 'Get Started Free 🚀'}</h3>
         <div className="modal-sub">{isLogin ? 'Sign in to continue building your resume' : 'Join 50,000+ job seekers. No credit card needed.'}</div>
         
@@ -49,7 +49,7 @@ export function AuthModal({ isOpen, activeTab, onClose, onSwitchTab, onGoogleLog
           <div>
             <div className="modal-input-group"><label>Email Address</label><input type="email" placeholder="yourname@email.com" value={email} onChange={e => setEmail(e.target.value)}/></div>
             <div className="modal-input-group"><label>Password</label><input type="password" placeholder="Enter your password" value={password} onChange={e => setPassword(e.target.value)}/></div>
-            <button className="modal-submit" onClick={() => onEmailLogin(email, password)}>Login to ResumeAI →</button>
+            <button className="modal-submit" onClick={() => onEmailLogin(email, password)}>Login to Ripler →</button>
             <div className="modal-footer-text">Don&apos;t have an account? <a href="#" onClick={(e) => { e.preventDefault(); onSwitchTab('signup'); }}>Sign up free</a></div>
           </div>
         ) : (

@@ -55,7 +55,7 @@ export function LandingBottom({ onOpenModal }: Props) {
         </div>
         <div className="testimonials-grid">
           {[{init:'RK',name:'Rahul Kumar',role:'Software Engineer, TCS • Delhi',text:'"Got hired at TCS within 2 weeks! The AI bullet points were exactly what I needed."',bg:''},
-            {init:'PM',name:'Priya Mehta',role:'Marketing Executive • Mumbai',text:'"As a fresher, ResumeAI did everything for me. Got 3 interview calls in the first week!"',bg:'linear-gradient(135deg,#C2255C,#E64980)'},
+            {init:'PM',name:'Priya Mehta',role:'Marketing Executive • Mumbai',text:'"As a fresher, Ripler did everything for me. Got 3 interview calls in the first week!"',bg:'linear-gradient(135deg,#C2255C,#E64980)'},
             {init:'AS',name:'Amit Singh',role:'Data Analyst, Infosys • Bangalore',text:'"The ATS score feature helped me understand why I was getting rejected. Got a callback from Infosys!"',bg:'linear-gradient(135deg,#E67700,#F59F00)'}
           ].map((t,i) => (
             <div key={i} className={`testimonial-card reveal reveal-delay-${i+1}`}>
@@ -83,7 +83,7 @@ export function LandingBottom({ onOpenModal }: Props) {
       {/* CTA */}
       <section className="cta-section">
         <h2 className="reveal">Your Next Job Starts<br/>With a Great Resume</h2>
-        <p className="reveal reveal-delay-1">Join 50,000+ job seekers who built their winning resume with ResumeAI</p>
+        <p className="reveal reveal-delay-1">Join 50,000+ job seekers who built their winning resume with Ripler</p>
         <a href="#" className="btn-white reveal reveal-delay-2" onClick={(e) => { e.preventDefault(); onOpenModal('signup'); }}>Build My Resume Now — It&apos;s Free →</a>
         <div className="cta-note reveal reveal-delay-3">No credit card required • Takes under 5 minutes • 100% Free to start</div>
       </section>
@@ -92,7 +92,7 @@ export function LandingBottom({ onOpenModal }: Props) {
       <footer>
         <div className="footer-grid">
           <div>
-            <span className="footer-logo-text">ResumeAI<span style={{color:'var(--accent)'}}>.</span></span>
+            <span className="footer-logo-text">Ripler<span style={{color:'var(--accent)'}}>.</span></span>
             <div className="footer-tagline">India&apos;s #1 AI-powered resume builder. Build ATS-friendly resumes in minutes.</div>
             <div style={{display:'flex',gap:'10px',marginTop:'4px'}}>
               {['LinkedIn','Twitter','Instagram'].map(s => (<a key={s} href="#" style={{color:'rgba(255,255,255,0.5)',textDecoration:'none',fontSize:'0.8rem',border:'1px solid rgba(255,255,255,0.15)',padding:'5px 10px',borderRadius:'6px'}}>{s}</a>))}
@@ -111,7 +111,7 @@ export function LandingBottom({ onOpenModal }: Props) {
           </div>
         </div>
         <div className="footer-bottom">
-          <div>© 2025 ResumeAI. All rights reserved.</div>
+          <div>© 2025 Ripler. All rights reserved.</div>
           <div>Made with ❤️ in India <span className="india-flag">🇮🇳</span></div>
         </div>
       </footer>

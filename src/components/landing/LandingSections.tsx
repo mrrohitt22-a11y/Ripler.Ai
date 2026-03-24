@@ -9,7 +9,7 @@ export function LandingSections({ onOpenModal }: Props) {
       {/* RESULTS */}
       <section className="results-section">
         <div className="result-left reveal">
-          <div className="section-tag">Why ResumeAI?</div>
+          <div className="section-tag">Why Ripler?</div>
           <div className="result-header">
             <h2 className="section-title">Create a resume<br/><span className="hl">that gets results</span></h2>
             <a href="#templates" className="choose-btn">Choose a Template →</a>
