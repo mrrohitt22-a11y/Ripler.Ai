@@ -255,10 +255,10 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <header className="h-16 border-b bg-white/80 backdrop-blur-2xl flex items-center justify-between px-6 sticky top-0 z-50 shadow-sm no-print">
+      <header className="h-16 border-b bg-card/80 backdrop-blur-2xl flex items-center justify-between px-6 sticky top-0 z-50 shadow-sm no-print">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex flex-col group">
-            <h1 className="font-headline font-bold text-2xl leading-none text-foreground tracking-tighter group-hover:text-primary transition-colors">
+            <h1 className="font-headline font-bold text-foregroundxl leading-none text-foreground tracking-tighter group-hover:text-primary transition-colors">
               Ripler
             </h1>
             <div className="flex items-center gap-1.5 mt-1">
@@ -278,7 +278,7 @@ export default function Home() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30" 
+              className="h-8 w-8 rounded-md hover:bg-card hover:shadow-sm disabled:opacity-30" 
               onClick={handleUndo} 
               disabled={historyState.index <= 0}
               title="Undo (Ctrl+Z)"
@@ -288,7 +288,7 @@ export default function Home() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="h-8 w-8 rounded-md hover:bg-white hover:shadow-sm disabled:opacity-30" 
+              className="h-8 w-8 rounded-md hover:bg-card hover:shadow-sm disabled:opacity-30" 
               onClick={handleRedo} 
               disabled={historyState.index >= historyState.list.length - 1}
               title="Redo (Ctrl+Y)"
@@ -320,7 +320,7 @@ export default function Home() {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 mt-2 rounded-2xl p-2 shadow-2xl border-white/50 bg-white/95 backdrop-blur-xl" align="end">
+              <DropdownMenuContent className="w-56 mt-2 rounded-2xl p-2 shadow-2xl border-border bg-white/95 backdrop-blur-xl" align="end">
                 <DropdownMenuLabel className="font-headline text-lg px-3 pt-3">My Account</DropdownMenuLabel>
                 <div className="px-3 pb-3">
                   <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground truncate">{user.email}</p>
@@ -365,7 +365,7 @@ export default function Home() {
       <Dialog open={profileOpen} onOpenChange={setProfileOpen}>
         <DialogContent className="max-w-md rounded-3xl p-0 overflow-hidden">
           <div className="bg-primary/5 p-8 border-b">
-            <DialogTitle className="font-headline text-2xl text-primary flex items-center gap-3">
+            <DialogTitle className="font-headline text-foregroundxl text-primary flex items-center gap-3">
               <User className="w-6 h-6" /> Professional Profile
             </DialogTitle>
             <DialogDescription className="text-xs">Update your global identity.</DialogDescription>
@@ -393,7 +393,7 @@ export default function Home() {
       <Dialog open={settingsOpen} onOpenChange={setSettingsOpen}>
         <DialogContent className="max-w-md rounded-3xl p-0 overflow-hidden">
           <div className="bg-foreground/5 p-8 border-b">
-            <DialogTitle className="font-headline text-2xl text-foreground flex items-center gap-3">
+            <DialogTitle className="font-headline text-foregroundxl text-foreground flex items-center gap-3">
               <Settings className="w-6 h-6" /> Account Settings
             </DialogTitle>
           </div>
@@ -412,11 +412,11 @@ export default function Home() {
       <main className="flex-1 h-[calc(100vh-64px)] overflow-hidden z-10 no-print">
         {isMobile ? (
           <Tabs defaultValue="edit" className="w-full h-full flex flex-col">
-            <TabsList className="grid w-full grid-cols-2 bg-white border-b h-14 z-20">
+            <TabsList className="grid w-full grid-cols-2 bg-card border-b h-14 z-20">
               <TabsTrigger value="edit" className="flex items-center gap-2 font-black uppercase text-[10px] tracking-widest data-[state=active]:text-primary"><Edit3 className="w-4 h-4" /> Build</TabsTrigger>
               <TabsTrigger value="preview" className="flex items-center gap-2 font-black uppercase text-[10px] tracking-widest data-[state=active]:text-primary"><Eye className="w-4 h-4" /> Preview</TabsTrigger>
             </TabsList>
-            <TabsContent value="edit" className="flex-1 overflow-hidden m-0 p-4 bg-white/50 backdrop-blur-sm">
+            <TabsContent value="edit" className="flex-1 overflow-hidden m-0 p-4 bg-card/50 backdrop-blur-sm">
               <ResumeForm data={data} onChange={setData} />
             </TabsContent>
             <TabsContent value="preview" className="flex-1 overflow-hidden m-0 relative flex flex-col items-center">
@@ -428,12 +428,12 @@ export default function Home() {
           </Tabs>
         ) : (
           <div className="grid grid-cols-[460px_1fr] h-full">
-            <aside className="border-r bg-white/60 backdrop-blur-md p-6 overflow-hidden z-10">
+            <aside className="border-r bg-card/60 backdrop-blur-md p-6 overflow-hidden z-10">
               <ResumeForm data={data} onChange={setData} />
             </aside>
 
             <div className="bg-primary/5 overflow-hidden relative flex flex-col items-center">
-              <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 bg-white/90 backdrop-blur-2xl p-2.5 rounded-full shadow-2xl border border-white/50 no-print">
+              <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 bg-card/90 backdrop-blur-2xl p-2.5 rounded-full shadow-2xl border border-border no-print">
                 <Button variant="ghost" size="icon" className="rounded-full" onClick={() => setPreviewScale(Math.max(0.4, previewScale - 0.1))}><Phone className="w-4 h-4" /></Button>
                 <div className="text-[10px] font-black w-14 text-center text-primary">{Math.round(previewScale * 100)}%</div>
                 <Button variant="ghost" size="icon" className="rounded-full" onClick={() => setPreviewScale(Math.min(1.2, previewScale + 0.1))}><Monitor className="w-4 h-4" /></Button>
