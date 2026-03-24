@@ -197,7 +197,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
   return (
     <div className="space-y-8 h-full overflow-y-auto pb-24 pr-1 scrollbar-hide gpu-render">
       {/* Editor Header Section */}
-      <div className="flex flex-col gap-4 sticky top-0 bg-card/95 backdrop-blur-md z-30 py-4 border-b -mx-2 px-2">
+      <div className="flex flex-col gap-4 sticky top-0 bg-white/95 backdrop-blur-md z-30 py-4 border-b -mx-2 px-2">
         <div className="flex justify-between items-center">
           <h2 className="text-[10px] font-black uppercase tracking-[0.25em] text-primary/70">Building Dashboard</h2>
           <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
@@ -239,7 +239,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
             <div className="space-y-2">
               <Label className="text-[9px] uppercase font-black tracking-widest text-primary/60">Strategy</Label>
               <Tabs value={data.version || 'designer'} onValueChange={handleVersionChange} className="w-full">
-                <TabsList className="grid w-full grid-cols-2 h-9 p-1 bg-card border">
+                <TabsList className="grid w-full grid-cols-2 h-9 p-1 bg-white border">
                   <TabsTrigger value="ats" className="text-[9px] font-black uppercase">ATS</TabsTrigger>
                   <TabsTrigger value="designer" className="text-[9px] font-black uppercase">Design</TabsTrigger>
                 </TabsList>
@@ -248,7 +248,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
             <div className="space-y-2">
               <Label className="text-[9px] uppercase font-black tracking-widest text-primary/60">Persona</Label>
               <Select value={data.tone || 'Corporate'} onValueChange={handleToneChange}>
-                <SelectTrigger className="h-9 text-[10px] font-bold bg-card border">
+                <SelectTrigger className="h-9 text-[10px] font-bold bg-white border">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -268,7 +268,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
       </div>
 
       <Accordion type="multiple" defaultValue={["design", "personal"]} className="space-y-6">
-        <AccordionItem value="design" className="border hover:border-primary/30 rounded-2xl bg-card/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
+        <AccordionItem value="design" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -333,7 +333,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="personal" className="border hover:border-primary/30 rounded-2xl bg-card/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
+        <AccordionItem value="personal" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -395,7 +395,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="experience" className="border hover:border-primary/30 rounded-2xl bg-card/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
+        <AccordionItem value="experience" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -409,7 +409,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionTrigger>
           <AccordionContent className="space-y-6 pt-2 pb-8">
             {data.experiences.map((exp) => (
-              <div key={exp.id} className="p-6 border border-border/50 rounded-2xl space-y-5 relative group bg-card/50 hover:bg-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <div key={exp.id} className="p-6 border border-border/50 rounded-2xl space-y-5 relative group bg-white/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <Button variant="ghost" size="icon" className="absolute top-4 right-4 h-8 w-8 text-destructive" onClick={() => removeArrayItem('experiences', exp.id)}><Trash2 className="w-4 h-4" /></Button>
                 <div className="grid grid-cols-2 gap-5">
                   <div className="space-y-2">
@@ -427,7 +427,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
                     <Input key={i} value={b} onChange={(e) => {
                       const newB = [...exp.bullets]; newB[i] = e.target.value;
                       onChange({...data, experiences: data.experiences.map(ex => ex.id === exp.id ? {...ex, bullets: newB} : ex)});
-                    }} className="text-[11px] h-10 bg-card rounded-xl" />
+                    }} className="text-[11px] h-10 bg-white rounded-xl" />
                   ))}
                   <Button variant="ghost" size="sm" className="w-full border-2 border-dashed h-9 text-[9px] font-black uppercase" onClick={() => {
                     const newB = [...exp.bullets, ""];
