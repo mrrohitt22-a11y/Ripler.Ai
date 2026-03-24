@@ -6,8 +6,8 @@
   --blue-dark: #90DBF4;
   --purple: #CFBAF0;
   --green: #B9FBC0;
-  --text: #2D3748;
-  --muted: #718096;
+  --text: #09090B;
+  --muted: #52525B;
   --border: #FDE4CF;
   --bg: #FBF8CC;
   --white: #FFFFFF;
@@ -37,7 +37,7 @@ nav {
 nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
 .nav-logo {
   font-family: 'Sora', sans-serif;
-  font-size: 1.15rem; font-weight: 700;
+  font-size: 1.15rem; font-weight: 800;
   color: var(--text); text-decoration: none;
   display: flex; align-items: center; gap: 6px;
 }
@@ -101,7 +101,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
 }
 .hero h1 {
   font-family: 'Sora', sans-serif;
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem); letter-spacing: -0.03em;
   font-weight: 800; line-height: 1.15;
   color: var(--text); margin-bottom: 16px;
 }
@@ -118,8 +118,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
 }
 .btn-primary {
   background: linear-gradient(135deg, var(--blue), var(--purple));
-  color: #1A1A2E; border: none; padding: 13px 28px;
-  border-radius: 10px; font-size: 0.95rem; font-weight: 700;
+  color: #09090B; border: none; padding: 13px 28px;
+  border-radius: 10px; font-size: 0.95rem; font-weight: 800;
   cursor: pointer; text-decoration: none;
   display: inline-flex; align-items: center; gap: 8px;
   box-shadow: 0 4px 20px rgba(163,196,243,0.35);
@@ -153,7 +153,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
   background: linear-gradient(135deg, var(--blue), var(--purple));
   border: 2px solid white; margin-left: -8px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.65rem; font-weight: 800; color: #1A1A2E;
+  font-size: 0.65rem; font-weight: 800; color: #09090B;
 }
 .avatars span:first-child { margin-left: 0; }
 .stars { color: var(--star); font-size: 0.88rem; }
@@ -164,7 +164,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
 }
 .trustpilot-score {
   background: #00B67A; color: white;
-  padding: 3px 8px; border-radius: 4px; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px; font-weight: 800;
   font-size: 0.75rem;
 }
 .tp-stars { color: #00B67A; }
@@ -187,7 +187,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
   position: absolute; top: -14px; right: -14px;
   background: linear-gradient(135deg, #2F9E44, #40C057);
   color: white; border-radius: 20px;
-  padding: 5px 12px; font-size: 0.72rem; font-weight: 700;
+  padding: 5px 12px; font-size: 0.72rem; font-weight: 800;
   box-shadow: 0 4px 12px rgba(47,158,68,0.4);
   white-space: nowrap;
 }
@@ -196,11 +196,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
   background: linear-gradient(135deg, var(--blue), var(--purple));
   margin-bottom: 10px;
 }
-.resume-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--text); }
+.resume-name { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--text); }
 .resume-title { font-size: 0.72rem; color: var(--blue); font-weight: 600; margin-bottom: 12px; }
 .resume-divider { height: 1px; background: var(--border); margin: 8px 0; }
 .resume-section-label {
-  font-size: 0.6rem; font-weight: 700; color: var(--blue);
+  font-size: 0.6rem; font-weight: 800; color: var(--blue);
   text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px;
 }
 .resume-line {
@@ -245,14 +245,14 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(59,91,219,0.08); }
 section { padding: 70px 5%; }
 .section-tag {
   display: inline-block;
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--blue);
   background: var(--blue-light); padding: 4px 12px;
   border-radius: 20px; margin-bottom: 12px;
 }
 h2.section-title {
   font-family: 'Sora', sans-serif;
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-size: clamp(2rem, 4vw, 2.6rem); letter-spacing: -0.03em;
   font-weight: 800; line-height: 1.2; color: var(--text);
   margin-bottom: 12px;
 }
@@ -281,14 +281,14 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
   background: linear-gradient(135deg, var(--blue), var(--purple));
   transform: scale(1.08);
 }
-.step-text h4 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+.step-text h4 { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; }
 .step-text p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
 .result-right { display: flex; justify-content: center; }
 .choose-btn {
   display: inline-flex; align-items: center; gap: 8px;
   background: linear-gradient(135deg, var(--blue), var(--purple));
-  color: #1A1A2E; border: none; padding: 14px 28px;
-  border-radius: 10px; font-size: 0.95rem; font-weight: 700;
+  color: #09090B; border: none; padding: 14px 28px;
+  border-radius: 10px; font-size: 0.95rem; font-weight: 800;
   cursor: pointer; font-family: 'DM Sans', sans-serif;
   box-shadow: 0 4px 20px rgba(163,196,243,0.3);
   transition: all 0.25s; text-decoration: none;
@@ -323,7 +323,7 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
   background: linear-gradient(135deg, rgba(59,91,219,0.04), rgba(112,72,232,0.06));
 }
 .feature-card-body { padding: 16px 18px; }
-.feature-card-body h4 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+.feature-card-body h4 { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 0.9rem; margin-bottom: 4px; }
 .feature-card-body p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
 
 /* TEMPLATES */
@@ -372,7 +372,7 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
 .template-overlay button {
   background: white; color: var(--blue);
   border: none; padding: 10px 20px; border-radius: 8px;
-  font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  font-weight: 800; font-size: 0.85rem; cursor: pointer;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -387,7 +387,7 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
 }
 .stat-num {
   font-family: 'Sora', sans-serif;
-  font-size: 2.2rem; font-weight: 800; color: #1A1A2E;
+  font-size: 2.2rem; font-weight: 800; color: #09090B;
   margin-bottom: 4px;
 }
 .stat-num span { color: #FFFFFF; }
@@ -412,10 +412,10 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
   width: 38px; height: 38px; border-radius: 50%;
   background: linear-gradient(135deg, var(--blue), var(--purple));
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.72rem; font-weight: 700; color: white;
+  font-size: 0.72rem; font-weight: 800; color: white;
   flex-shrink: 0;
 }
-.test-name { font-weight: 700; font-size: 0.85rem; }
+.test-name { font-weight: 800; font-size: 0.85rem; }
 .test-role { font-size: 0.75rem; color: var(--muted); }
 
 /* COMPANIES */
@@ -452,13 +452,13 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
 .cta-section h2 {
   font-family: 'Sora', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.5rem);
-  font-weight: 800; color: #1A1A2E; margin-bottom: 12px;
+  font-weight: 800; color: #09090B; margin-bottom: 12px;
 }
 .cta-section p { color: rgba(26,26,46,0.8); margin-bottom: 32px; font-size: 1rem; }
 .btn-white {
-  background: white; color: #1A1A2E;
+  background: white; color: #09090B;
   border: none; padding: 15px 36px; border-radius: 10px;
-  font-size: 1rem; font-weight: 700; cursor: pointer;
+  font-size: 1rem; font-weight: 800; cursor: pointer;
   font-family: 'DM Sans', sans-serif;
   box-shadow: 0 6px 24px rgba(0,0,0,0.2);
   transition: all 0.25s; text-decoration: none;
@@ -478,11 +478,11 @@ footer {
   gap: 32px; margin-bottom: 40px;
 }
 .footer-logo-text {
-  font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 700;
-  color: #1A1A2E; margin-bottom: 8px; display: block;
+  font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 800;
+  color: #09090B; margin-bottom: 8px; display: block;
 }
 .footer-tagline { font-size: 0.82rem; line-height: 1.6; margin-bottom: 16px; }
-.footer-h { font-family: 'Sora', sans-serif; font-weight: 700; color: #1A1A2E; font-size: 0.85rem; margin-bottom: 14px; }
+.footer-h { font-family: 'Sora', sans-serif; font-weight: 800; color: #09090B; font-size: 0.85rem; margin-bottom: 14px; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .footer-links a { color: #64748B; text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
 .footer-links a:hover { color: var(--blue); }
@@ -519,7 +519,7 @@ footer {
 .modal-overlay.open .modal { transform: translateY(0) scale(1); }
 .modal-logo { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.1rem; margin-bottom: 6px; }
 .modal-logo span { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.modal h3 { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.4rem; margin-bottom: 4px; }
+.modal h3 { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 4px; }
 .modal-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; }
 .modal-tabs { display: flex; background: var(--bg); border-radius: 8px; padding: 3px; margin-bottom: 20px; }
 .modal-tab {
@@ -540,7 +540,7 @@ footer {
 .modal-submit {
   width: 100%; padding: 13px; border-radius: 10px;
   background: linear-gradient(135deg, var(--blue), var(--purple));
-  color: white; border: none; font-size: 0.95rem; font-weight: 700;
+  color: white; border: none; font-size: 0.95rem; font-weight: 800;
   cursor: pointer; font-family: 'DM Sans', sans-serif;
   box-shadow: 0 4px 16px rgba(59,91,219,0.3);
   transition: all 0.25s; margin-top: 6px;
@@ -580,3 +580,4 @@ footer {
 .nav-mobile-btn {
   display: none; align-items: center; gap: 8px;
 }
+
