@@ -251,14 +251,14 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-[#EDE5DA] flex flex-col no-print relative overflow-hidden selection:bg-primary/30">
-      <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+    <div className="min-h-screen bg-background flex flex-col no-print relative overflow-hidden selection:bg-primary/30">
+      <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[120px] pointer-events-none" />
 
       <header className="h-16 border-b bg-white/80 backdrop-blur-2xl flex items-center justify-between px-6 sticky top-0 z-50 shadow-sm no-print">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex flex-col group">
-            <h1 className="font-headline font-bold text-2xl leading-none text-[#1A1208] tracking-tighter group-hover:text-primary transition-colors">
+            <h1 className="font-headline font-bold text-2xl leading-none text-foreground tracking-tighter group-hover:text-primary transition-colors">
               Ripler
             </h1>
             <div className="flex items-center gap-1.5 mt-1">
@@ -348,7 +348,7 @@ export default function Home() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button size="sm" onClick={handleLogin} className="gap-2 bg-[#1A1208] text-white shadow-lg h-9 px-5 rounded-full hover:scale-105 transition-all">
+            <Button size="sm" onClick={handleLogin} className="gap-2 bg-foreground text-background shadow-lg h-9 px-5 rounded-full hover:scale-105 transition-all">
               <LogIn className="w-4 h-4" /> <span className="font-bold text-xs">Sign In</span>
             </Button>
           )}
@@ -392,8 +392,8 @@ export default function Home() {
 
       <Dialog open={settingsOpen} onOpenChange={setSettingsOpen}>
         <DialogContent className="max-w-md rounded-3xl p-0 overflow-hidden">
-          <div className="bg-[#1A1208]/5 p-8 border-b">
-            <DialogTitle className="font-headline text-2xl text-[#1A1208] flex items-center gap-3">
+          <div className="bg-foreground/5 p-8 border-b">
+            <DialogTitle className="font-headline text-2xl text-foreground flex items-center gap-3">
               <Settings className="w-6 h-6" /> Account Settings
             </DialogTitle>
           </div>
@@ -432,7 +432,7 @@ export default function Home() {
               <ResumeForm data={data} onChange={setData} />
             </aside>
 
-            <div className="bg-[#EDE5DA]/20 overflow-hidden relative flex flex-col items-center">
+            <div className="bg-primary/5 overflow-hidden relative flex flex-col items-center">
               <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 bg-white/90 backdrop-blur-2xl p-2.5 rounded-full shadow-2xl border border-white/50 no-print">
                 <Button variant="ghost" size="icon" className="rounded-full" onClick={() => setPreviewScale(Math.max(0.4, previewScale - 0.1))}><Phone className="w-4 h-4" /></Button>
                 <div className="text-[10px] font-black w-14 text-center text-primary">{Math.round(previewScale * 100)}%</div>

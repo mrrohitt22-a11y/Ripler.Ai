@@ -268,7 +268,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
       </div>
 
       <Accordion type="multiple" defaultValue={["design", "personal"]} className="space-y-6">
-        <AccordionItem value="design" className="border-2 rounded-2xl bg-white px-6 shadow-md transition-all data-[state=open]:border-primary/20">
+        <AccordionItem value="design" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -333,7 +333,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="personal" className="border-2 rounded-2xl bg-white px-6 shadow-md transition-all data-[state=open]:border-primary/20">
+        <AccordionItem value="personal" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -395,7 +395,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="experience" className="border-2 rounded-2xl bg-white px-6 shadow-md transition-all data-[state=open]:border-primary/20">
+        <AccordionItem value="experience" className="border hover:border-primary/30 rounded-2xl bg-white/80 backdrop-blur-xl px-6 shadow-sm hover:shadow-md transition-all duration-300 data-[state=open]:border-primary/40 data-[state=open]:shadow-lg">
           <AccordionTrigger className="hover:no-underline py-6 group">
             <div className="flex items-center gap-4">
               <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -409,7 +409,7 @@ export const ResumeForm: React.FC<ResumeFormProps> = ({ data, onChange }) => {
           </AccordionTrigger>
           <AccordionContent className="space-y-6 pt-2 pb-8">
             {data.experiences.map((exp) => (
-              <div key={exp.id} className="p-6 border-2 rounded-2xl space-y-5 relative group bg-muted/5 hover:bg-white transition-all">
+              <div key={exp.id} className="p-6 border border-border/50 rounded-2xl space-y-5 relative group bg-white/50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <Button variant="ghost" size="icon" className="absolute top-4 right-4 h-8 w-8 text-destructive" onClick={() => removeArrayItem('experiences', exp.id)}><Trash2 className="w-4 h-4" /></Button>
                 <div className="grid grid-cols-2 gap-5">
                   <div className="space-y-2">
