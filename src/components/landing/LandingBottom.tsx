@@ -100,7 +100,15 @@ export function LandingBottom({ onOpenModal }: Props) {
           </div>
           <div><div className="footer-h">Product</div><ul className="footer-links">{['Features','Templates','ATS Score','Cover Letter'].map(l => (<li key={l}><a href="#">{l}</a></li>))}</ul></div>
           <div><div className="footer-h">Company</div><ul className="footer-links">{['About Us','Blog','Careers','Contact'].map(l => (<li key={l}><a href="#">{l}</a></li>))}</ul></div>
-          <div><div className="footer-h">Legal</div><ul className="footer-links">{['Privacy Policy','Terms of Service','Refund Policy','Cookie Policy'].map(l => (<li key={l}><a href="#">{l}</a></li>))}</ul></div>
+          <div>
+            <div className="footer-h">Legal</div>
+            <ul className="footer-links">
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/terms-of-service">Terms of Service</a></li>
+              <li><a href="/refund-policy">Refund Policy</a></li>
+              <li><a href="/cookie-policy">Cookie Policy</a></li>
+            </ul>
+          </div>
         </div>
         <div className="footer-bottom">
           <div>© 2025 ResumeAI. All rights reserved.</div>
