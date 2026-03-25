@@ -2,14 +2,14 @@
 
 :root {
   --blue: #A3C4F3;
-  --blue-light: #F8FDFF;
+  --blue-light: #CFE0F8; /* Soft Blue */
   --blue-dark: #90DBF4;
   --purple: #CFBAF0;
   --green: #B9FBC0;
   --text: #09090B;
   --muted: #52525B;
   --border: #FDE4CF;
-  --bg: #3B82F6;
+  --bg: #FCD9DF; /* Soft Pink from new palette */
   --white: #FFFFFF;
   --accent: #FFCFD2;
   --star: #F1C0E8;
