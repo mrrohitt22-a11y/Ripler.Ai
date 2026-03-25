@@ -331,51 +331,6 @@ p.section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; line-hei
 .templates-section { background: white; }
 .templates-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
 .templates-row h2 { margin-bottom: 0; }
-.template-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-.template-card {
-  background: var(--bg); border-radius: 12px;
-  border: 2px solid var(--border);
-  aspect-ratio: 3/4; cursor: pointer;
-  display: flex; flex-direction: column;
-  overflow: hidden; position: relative;
-  transition: all 0.3s;
-}
-.template-card:hover { border-color: var(--blue); box-shadow: 0 8px 30px rgba(59,91,219,0.15); }
-.template-card:hover .template-overlay { opacity: 1; }
-.template-inner { flex: 1; padding: 14px; }
-.t-header { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
-.t-avatar { width: 24px; height: 24px; border-radius: 50%; }
-.t-avatar.blue { background: linear-gradient(135deg, var(--blue), var(--purple)); }
-.t-avatar.green { background: linear-gradient(135deg, #2F9E44, #40C057); }
-.t-avatar.orange { background: linear-gradient(135deg, #E67700, #F59F00); }
-.t-avatar.pink { background: linear-gradient(135deg, #C2255C, #E64980); }
-.t-title-lines { flex: 1; }
-.t-line { height: 5px; border-radius: 3px; background: var(--border); margin-bottom: 3px; }
-.t-line.dark { background: var(--text); }
-.t-body-lines { margin-top: 8px; }
-.t-divider { height: 1.5px; background: var(--border); margin: 8px 0; }
-.template-label {
-  background: white; padding: 8px 14px;
-  border-top: 1px solid var(--border);
-  font-size: 0.75rem; font-weight: 600; color: var(--muted);
-}
-.template-overlay {
-  position: absolute; inset: 0;
-  background: rgba(59,91,219,0.88);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.25s;
-  border-radius: 10px;
-}
-.template-overlay button {
-  background: white; color: var(--blue);
-  border: none; padding: 10px 20px; border-radius: 8px;
-  font-weight: 800; font-size: 0.85rem; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-}
 
 /* STATS */
 .stats-section {

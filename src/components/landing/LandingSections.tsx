@@ -98,19 +98,170 @@ export function LandingSections({ onOpenModal }: Props) {
           <h2 className="section-title">35+ Professional <span className="hl">Resume Templates</span></h2>
           <p className="section-sub" style={{margin:'8px auto 0',textAlign:'center'}}>ATS-friendly designs loved by recruiters at top companies</p>
         </div>
-        <div className="template-grid">
-          {['Professional Blue','Modern Dark','Clean Minimal','Executive Pro'].map((name, i) => (
-            <div key={i} className={`template-card reveal reveal-delay-${i+1}`}>
-              <div className="template-inner">
-                <div className="t-header"><div className="t-avatar blue"></div><div className="t-title-lines"><div className="t-line dark" style={{width:'60%',height:'6px',background:'#1A1A2E'}}></div><div className="t-line" style={{width:'40%',background:'var(--blue)'}}></div></div></div>
-                <div className="t-body-lines"><div className="t-line w100"></div><div className="t-line w80"></div><div className="t-line w90"></div></div>
-                <div className="t-divider"></div>
-                <div className="t-body-lines"><div className="t-line w100"></div><div className="t-line w60"></div></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-0">
+          
+          {/* Template 1: Creative Gradient */}
+          <div className="group relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-1">
+            <div className="flex-1 w-full relative">
+              <div className="h-10 bg-gradient-to-r from-[#A3C4F3] to-[#CFBAF0] w-full"></div>
+              <div className="p-4 space-y-4">
+                <div className="flex gap-3 items-center">
+                  <div className="w-8 h-8 rounded-full bg-indigo-100 border border-indigo-200 flex-shrink-0"></div>
+                  <div className="space-y-1.5 flex-1">
+                    <div className="h-2 w-3/4 bg-gray-800 rounded"></div>
+                    <div className="h-1.5 w-1/2 bg-[#A3C4F3] rounded"></div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1.5 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1.5 w-4/5 bg-gray-200 rounded"></div>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mt-4">
+                  <div className="space-y-2">
+                    <div className="h-2 w-1/2 bg-gray-300 rounded mb-1"></div>
+                    <div className="h-1.5 w-full bg-gray-200 rounded"></div>
+                    <div className="h-1.5 w-5/6 bg-gray-200 rounded"></div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-2 w-1/2 bg-gray-300 rounded mb-1"></div>
+                    <div className="h-1.5 w-full bg-gray-200 rounded"></div>
+                    <div className="h-1.5 w-4/5 bg-gray-200 rounded"></div>
+                  </div>
+                </div>
               </div>
-              <div className="template-label">{name}</div>
-              <div className="template-overlay"><button onClick={() => onOpenModal('signup')}>Use Template</button></div>
             </div>
-          ))}
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Creative Gradient</div>
+            <div className="absolute inset-0 bg-[#A3C4F3]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-white text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 2: Midnight Mode */}
+          <div className="group relative bg-[#18181b] border border-gray-800 rounded-xl shadow-sm hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-2">
+            <div className="flex-1 w-full p-4 flex flex-col">
+              <div className="flex justify-between items-end mb-4 border-b border-gray-800 pb-3">
+                 <div className="space-y-2 w-2/3">
+                   <div className="h-2.5 w-4/5 bg-gray-100 rounded"></div>
+                   <div className="h-1.5 w-1/2 bg-[#90DBF4] rounded"></div>
+                 </div>
+                 <div className="flex gap-1">
+                   <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                   <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                 </div>
+              </div>
+              <div className="flex gap-4 flex-1">
+                <div className="w-1/3 border-r border-gray-800 pr-3 space-y-4">
+                  <div className="space-y-2">
+                     <div className="h-1.5 w-full bg-gray-500 rounded"></div>
+                     <div className="h-1 w-full bg-gray-700 rounded"></div>
+                     <div className="h-1 w-4/5 bg-gray-700 rounded"></div>
+                  </div>
+                  <div className="space-y-2">
+                     <div className="h-1.5 w-full bg-gray-500 rounded"></div>
+                     <div className="h-1 w-full bg-gray-700 rounded"></div>
+                  </div>
+                </div>
+                <div className="w-2/3 space-y-4">
+                  <div className="space-y-2">
+                     <div className="h-2 w-1/2 bg-[#CFBAF0] rounded mb-2"></div>
+                     <div className="h-1 w-full bg-gray-700 rounded"></div>
+                     <div className="h-1 w-full bg-gray-700 rounded"></div>
+                     <div className="h-1 w-5/6 bg-gray-700 rounded"></div>
+                  </div>
+                  <div className="space-y-2">
+                     <div className="h-1 w-full bg-gray-700 rounded"></div>
+                     <div className="h-1 w-4/5 bg-gray-700 rounded"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-[#18181b] border-t border-gray-800 text-sm font-bold text-gray-200 text-center">Midnight Mode</div>
+            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-gradient-to-r from-[#A3C4F3] to-[#CFBAF0] text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 3: Executive Sidebar */}
+          <div className="group relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-3">
+            <div className="flex-1 w-full flex">
+              <div className="w-[35%] bg-[#1e293b] p-3 flex flex-col items-center">
+                <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-white mb-3"></div>
+                <div className="h-1.5 w-full bg-gray-400 rounded mb-1"></div>
+                <div className="h-1 w-2/3 bg-gray-500 rounded mb-4"></div>
+                
+                <div className="w-full space-y-1.5 mt-auto mb-2">
+                  <div className="h-1 w-full bg-gray-600 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-600 rounded"></div>
+                </div>
+              </div>
+              <div className="w-[65%] p-4 space-y-4">
+                <div className="space-y-1.5 border-b border-gray-200 pb-2">
+                  <div className="h-2 w-3/4 bg-gray-800 rounded"></div>
+                  <div className="h-1 w-1/2 bg-gray-400 rounded"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-1/2 bg-blue-600 rounded mb-1"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-200 rounded"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-1/2 bg-blue-600 rounded mb-1"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-5/6 bg-gray-200 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Executive Sidebar</div>
+            <div className="absolute inset-0 bg-[#1e293b]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-white text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 4: Minimalist Clean */}
+          <div className="group relative bg-[#fafafa] border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-4">
+            <div className="flex-1 w-full p-5 space-y-6">
+              <div className="text-center space-y-2">
+                <div className="h-2.5 w-1/2 bg-gray-900 rounded mx-auto"></div>
+                <div className="h-1 w-1/4 bg-gray-400 rounded mx-auto"></div>
+                <div className="flex justify-center gap-2 mt-2">
+                  <div className="w-4 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-4 h-1 bg-gray-300 rounded"></div>
+                  <div className="w-4 h-1 bg-gray-300 rounded"></div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-black"></div>
+                  <div className="h-1.5 w-1/3 bg-gray-800 rounded"></div>
+                  <div className="flex-1 border-b border-gray-200"></div>
+                </div>
+                <div className="space-y-1.5 pl-3">
+                  <div className="h-1 w-full bg-gray-300 rounded"></div>
+                  <div className="h-1 w-full bg-gray-300 rounded"></div>
+                  <div className="h-1 w-5/6 bg-gray-300 rounded"></div>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-black"></div>
+                  <div className="h-1.5 w-1/3 bg-gray-800 rounded"></div>
+                  <div className="flex-1 border-b border-gray-200"></div>
+                </div>
+                <div className="space-y-1.5 pl-3">
+                  <div className="h-1 w-full bg-gray-300 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-300 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Minimalist Clean</div>
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-black text-white font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
         </div>
       </section>
     </>
