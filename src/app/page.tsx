@@ -76,16 +76,12 @@ export default function LandingPage() {
     }
   };
 
-  // Show attractive preloader while checking auth or during intro
-  if (isPreloading || isUserLoading) {
-    return <Preloader />;
-  }
-
   // If user is logged in, don't show landing (redirect will happen)
   if (user) return null;
 
   return (
     <div>
+      <Preloader isFinished={!isPreloading && !isUserLoading} />
       <LandingNav onOpenModal={openModal} />
       <LandingHero onOpenModal={openModal} />
       <LandingSections onOpenModal={openModal} />

@@ -1,28 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import './Preloader.css';
 
-export function Preloader() {
+export function Preloader({ isFinished }: { isFinished: boolean }) {
   const [mounted, setMounted] = useState(false);
+  const [hidden, setHidden] = useState(false);
   
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (isFinished) {
+      const timer = setTimeout(() => setHidden(true), 600); // Wait for fade out
+      return () => clearTimeout(timer);
+    }
+  }, [isFinished]);
+
+  if (hidden) return null;
+
   return (
-    <div className={`preloader-overlay ${mounted ? 'active' : ''}`}>
-      <div className="preloader-content">
-        <div className="brand-logo-anim">
-          R
+    <div className={`preloader-overlay ${mounted ? 'active' : ''} ${isFinished ? 'fade-out' : ''}`}>
+      <div className="welcome-content">
+        <div className="welcome-logo-container">
+          <div className="welcome-logo">R</div>
         </div>
-        <div className="loading-bar-container">
-          <div className="loading-bar"></div>
-        </div>
-        <div className="loading-text">
-          L O A D I N G
-          <span className="dot-1">.</span>
-          <span className="dot-2">.</span>
-          <span className="dot-3">.</span>
-        </div>
+        <h1 className="welcome-text">
+          <span>Welcome to </span>
+          <span className="brand-text">Ripler.Ai</span>
+        </h1>
       </div>
     </div>
   );
