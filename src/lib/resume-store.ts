@@ -9,6 +9,34 @@ export interface Experience {
   bullets: string[];
 }
 
+export interface Activity {
+  id: string;
+  organization: string;
+  role: string;
+  duration: string;
+  bullets: string[];
+}
+
+export interface Training {
+  id: string;
+  title: string;
+  institution: string;
+  year?: string;
+}
+
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  link?: string;
+  description?: string;
+}
+
+export interface Accomplishment {
+  id: string;
+  title: string;
+  description?: string;
+}
+
 export interface Education {
   id: string;
   degree: string;
@@ -75,12 +103,17 @@ export interface ResumeData {
   linkedin?: string;
   profileSummary: string;
   experiences: Experience[];
+  internships: Experience[];
+  extracurriculars: Activity[];
   education: Education[];
   projects: Project[];
   skills: Skill[];
   languages: Language[];
   tools: string[];
   strengths: Strength[];
+  trainings: Training[];
+  portfolio: PortfolioItem[];
+  accomplishments: Accomplishment[];
   templateConfig: TemplateConfig;
   tone: ResumeTone;
   version: ResumeVersion;
@@ -143,6 +176,11 @@ export const INITIAL_DATA: ResumeData = {
     { id: "3", icon: "🤖", label: "AI-Powered Workflow" },
     { id: "4", icon: "📊", label: "Data-Driven Decisions" }
   ],
+  internships: [],
+  extracurriculars: [],
+  trainings: [],
+  portfolio: [],
+  accomplishments: [],
   templateConfig: {
     layout: 'executive',
     fontPair: 'classic',

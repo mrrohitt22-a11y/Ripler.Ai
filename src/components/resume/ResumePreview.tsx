@@ -124,38 +124,167 @@ const ExecutiveLayout = ({ data, theme, fonts, groupedSkills }: any) => (
           </div>
         ))}
       </div>
+      {data.education?.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-[8px] font-black tracking-[3px] uppercase border-b pb-1" style={{ color: theme.accent }}>Education</h3>
+          <div className="space-y-3">
+            {data.education.map((edu: any) => (
+              <div key={edu.id}>
+                <div className="text-[10px] font-bold text-white leading-tight">{edu.degree}</div>
+                <div className="text-[8px] opacity-80 mt-0.5">{edu.institution}</div>
+                {edu.duration && <div className="text-[8px] opacity-60">{edu.duration}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {data.trainings?.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-[8px] font-black tracking-[3px] uppercase border-b pb-1" style={{ color: theme.accent }}>Trainings / Certifications</h3>
+          <div className="space-y-3">
+            {data.trainings.map((trn: any) => (
+              <div key={trn.id}>
+                <div className="text-[10px] font-bold text-white leading-tight">{trn.title}</div>
+                <div className="text-[8px] opacity-80 mt-0.5">{trn.institution}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </aside>
-    <main className="p-10 pt-12 flex flex-col gap-8" style={{ backgroundColor: theme.bg }}>
+    <main className="p-10 pt-12 flex flex-col gap-6" style={{ backgroundColor: theme.bg }}>
       <header>
         <h1 className={cn("text-4xl font-bold mb-2", fonts.head)} style={{ color: theme.text }}>{data.name}</h1>
         <h2 className="text-xs font-bold tracking-[4px] uppercase" style={{ color: theme.accent }}>{data.role}</h2>
       </header>
-      <section>
-        <SectionTitle theme={theme}>Profile</SectionTitle>
-        <p className="text-[11px] leading-relaxed text-justify" style={{ color: theme.text }}>{data.profileSummary}</p>
-      </section>
-      <section className="flex-1">
-        <SectionTitle theme={theme}>Experience</SectionTitle>
-        <div className="space-y-6">
-          {data.experiences.map((exp: any) => (
-            <div key={exp.id}>
-              <div className="flex justify-between items-baseline mb-1">
-                <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
-                <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
-              </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
-              <ul className="space-y-1.5">
-                {exp.bullets.map((b: string, i: number) => (
-                  <li key={i} className="text-[10.5px] leading-relaxed pl-4 relative" style={{ color: theme.text }}>
-                    <div className="absolute left-0 top-[8px] w-1.5 h-[1px]" style={{ backgroundColor: theme.accent }} />
-                    {b}
-                  </li>
-                ))}
-              </ul>
+      {data.profileSummary && (
+        <section>
+          <SectionTitle theme={theme}>Profile Summary</SectionTitle>
+          <p className="text-[11px] leading-relaxed text-justify" style={{ color: theme.text }}>{data.profileSummary}</p>
+        </section>
+      )}
+      <div className="flex-1 grid grid-cols-1 gap-6">
+        {data.experiences?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Experience</SectionTitle>
+            <div className="space-y-5">
+              {data.experiences.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => (
+                      <li key={i} className="text-[10.5px] leading-relaxed pl-4 relative" style={{ color: theme.text }}>
+                        <div className="absolute left-0 top-[8px] w-1.5 h-[1px]" style={{ backgroundColor: theme.accent }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+        )}
+        
+        {data.internships?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Internships</SectionTitle>
+            <div className="space-y-5">
+              {data.internships.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => (
+                      <li key={i} className="text-[10.5px] leading-relaxed pl-4 relative" style={{ color: theme.text }}>
+                        <div className="absolute left-0 top-[8px] w-1.5 h-[1px]" style={{ backgroundColor: theme.accent }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.projects?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Projects</SectionTitle>
+            <div className="space-y-4">
+              {data.projects.map((proj: any) => (
+                <div key={proj.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{proj.name}</h4>
+                    {proj.link && <span className="text-[9px] font-bold break-all" style={{ color: theme.accent }}>{proj.link}</span>}
+                  </div>
+                  <p className="text-[10.5px] leading-relaxed" style={{ color: theme.text }}>{proj.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.extracurriculars?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Extracurricular Activities</SectionTitle>
+            <div className="space-y-5">
+              {data.extracurriculars.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.organization}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => (
+                      <li key={i} className="text-[10.5px] leading-relaxed pl-4 relative" style={{ color: theme.text }}>
+                        <div className="absolute left-0 top-[8px] w-1.5 h-[1px]" style={{ backgroundColor: theme.accent }} />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.portfolio?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Portfolio & Output</SectionTitle>
+            <div className="grid grid-cols-2 gap-4">
+              {data.portfolio.map((port: any) => (
+                <div key={port.id} className="p-3 border rounded-lg bg-white/50 border-black/5">
+                  <h4 className="text-[11px] font-bold mb-1" style={{ color: theme.text }}>{port.title}</h4>
+                  {port.link && <div className="text-[9px] font-bold break-all" style={{ color: theme.accent }}>{port.link}</div>}
+                  {port.description && <p className="text-[9px] mt-1 opacity-80" style={{ color: theme.text }}>{port.description}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.accomplishments?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Accomplishments</SectionTitle>
+            <div className="space-y-3">
+              {data.accomplishments.map((acc: any) => (
+                <div key={acc.id}>
+                  <h4 className="text-[11px] font-bold mb-1" style={{ color: theme.text }}>• {acc.title}</h4>
+                  {acc.description && <p className="text-[10px] pl-3 opacity-80" style={{ color: theme.text }}>{acc.description}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </main>
   </div>
 );
@@ -227,44 +356,157 @@ const ATSLayout = ({ data, id, className }: any) => (
   >
     <header className="border-b-2 border-black pb-4 mb-6">
       <h1 className="text-3xl font-bold uppercase tracking-tight">{data.name}</h1>
-      <div className="text-sm mt-1 flex gap-4">
-        <span>{data.email}</span>
-        <span>|</span>
-        <span>{data.phone}</span>
-        <span>|</span>
-        <span>{data.location}</span>
+      <div className="text-sm mt-1 flex gap-4 flex-wrap">
+        {data.email && <span>{data.email} |</span>}
+        {data.phone && <span>{data.phone} |</span>}
+        {data.location && <span>{data.location}</span>}
       </div>
       <div className="text-lg font-bold mt-2 text-gray-700">{data.role}</div>
     </header>
-    <section className="mb-6">
-      <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Professional Summary</h2>
-      <p className="text-[11px] leading-normal">{data.profileSummary}</p>
-    </section>
-    <section className="mb-6">
-      <h2 className="text-sm font-bold uppercase border-b border-black mb-3">Work Experience</h2>
-      <div className="space-y-4">
-        {data.experiences.map((exp: any) => (
-          <div key={exp.id}>
-            <div className="flex justify-between font-bold text-xs">
-              <span>{exp.company}</span>
-              <span>{exp.duration}</span>
+
+    {data.profileSummary && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Professional Summary</h2>
+        <p className="text-[11px] leading-normal">{data.profileSummary}</p>
+      </section>
+    )}
+
+    {data.experiences?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Work Experience</h2>
+        <div className="space-y-4">
+          {data.experiences.map((exp: any) => (
+            <div key={exp.id}>
+              <div className="flex justify-between font-bold text-xs">
+                <span>{exp.company}</span>
+                <span>{exp.duration}</span>
+              </div>
+              <div className="italic text-[11px] mb-1">{exp.role}</div>
+              <ul className="list-disc pl-5 text-[11px] space-y-1">
+                {exp.bullets.map((b: any, i: number) => <li key={i}>{b}</li>)}
+              </ul>
             </div>
-            <div className="italic text-[11px] mb-1">{exp.role}</div>
-            <ul className="list-disc pl-5 text-[11px] space-y-1">
-              {exp.bullets.map((b: any, i: number) => <li key={i}>{b}</li>)}
-            </ul>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {data.internships?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Internships</h2>
+        <div className="space-y-4">
+          {data.internships.map((exp: any) => (
+            <div key={exp.id}>
+              <div className="flex justify-between font-bold text-xs">
+                <span>{exp.company}</span>
+                <span>{exp.duration}</span>
+              </div>
+              <div className="italic text-[11px] mb-1">{exp.role}</div>
+              <ul className="list-disc pl-5 text-[11px] space-y-1">
+                {exp.bullets.map((b: any, i: number) => <li key={i}>{b}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {data.projects?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Projects</h2>
+        <div className="space-y-4">
+          {data.projects.map((proj: any) => (
+            <div key={proj.id}>
+              <div className="flex justify-between font-bold text-xs">
+                <span>{proj.name}</span>
+                {proj.link && <span className="text-blue-600 underline text-[10px]">{proj.link}</span>}
+              </div>
+              {proj.description && <p className="text-[11px] mt-1">{proj.description}</p>}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {data.extracurriculars?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Extracurricular Activities</h2>
+        <div className="space-y-4">
+          {data.extracurriculars.map((exp: any) => (
+            <div key={exp.id}>
+              <div className="flex justify-between font-bold text-xs">
+                <span>{exp.organization}</span>
+                <span>{exp.duration}</span>
+              </div>
+              <div className="italic text-[11px] mb-1">{exp.role}</div>
+              <ul className="list-disc pl-5 text-[11px] space-y-1">
+                {exp.bullets.map((b: any, i: number) => <li key={i}>{b}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {data.skills?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Skills</h2>
+        <p className="text-[11px]">
+          {data.skills.map((s:any) => s.name).join(", ")}
+        </p>
+      </section>
+    )}
+
+    {data.education?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Education</h2>
+        {data.education.map((edu: any) => (
+          <div key={edu.id} className="text-[11px] mb-1">
+            <span className="font-bold">{edu.degree}</span> - {edu.institution} {edu.duration && `(${edu.duration})`}
           </div>
         ))}
-      </div>
-    </section>
-    <section>
-      <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Education</h2>
-      {data.education.map((edu: any) => (
-        <div key={edu.id} className="text-[11px]">
-          <span className="font-bold">{edu.degree}</span> - {edu.institution}
-        </div>
-      ))}
-    </section>
+      </section>
+    )}
+
+    {data.trainings?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Trainings & Certifications</h2>
+        {data.trainings.map((trn: any) => (
+          <div key={trn.id} className="text-[11px] mb-1">
+            <span className="font-bold">{trn.title}</span> - {trn.institution}
+          </div>
+        ))}
+      </section>
+    )}
+
+    {data.portfolio?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Portfolio / Work Samples</h2>
+        <ul className="list-disc pl-5 text-[11px] space-y-1">
+        {data.portfolio.map((port: any) => (
+          <li key={port.id} className="mb-1">
+            <span className="font-bold">{port.title}</span> 
+            {port.link && <span className="ml-2 text-blue-600 underline text-[10px]"><a href={port.link}>{port.link}</a></span>}
+            {port.description && <span className="ml-2">- {port.description}</span>}
+          </li>
+        ))}
+        </ul>
+      </section>
+    )}
+
+    {data.accomplishments?.length > 0 && (
+      <section className="mb-6">
+        <h2 className="text-sm font-bold uppercase border-b border-black mb-2">Accomplishments</h2>
+        <ul className="list-disc pl-5 text-[11px] space-y-1">
+          {data.accomplishments.map((acc: any) => (
+            <li key={acc.id} className="mb-1">
+              <span className="font-bold">{acc.title}</span>
+              {acc.description && <span> - {acc.description}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
   </div>
 );
 
@@ -609,32 +851,124 @@ const ModernistLayout = ({ data, theme, fonts }: any) => (
 
 const SplitLayout = ({ data, theme, fonts, groupedSkills }: any) => (
   <div className="grid grid-cols-[1fr_228px] h-full">
-    <main className="p-10 pt-12 flex flex-col gap-8" style={{ backgroundColor: theme.bg }}>
+    <main className="p-10 pt-12 flex flex-col gap-6" style={{ backgroundColor: theme.bg }}>
       <header>
         <h1 className={cn("text-4xl font-bold mb-2", fonts.head)} style={{ color: theme.text }}>{data.name}</h1>
         <h2 className="text-xs font-bold tracking-[4px] uppercase" style={{ color: theme.accent }}>{data.role}</h2>
       </header>
-      <section>
-        <SectionTitle theme={theme}>Profile</SectionTitle>
-        <p className="text-[11px] leading-relaxed text-justify" style={{ color: theme.text }}>{data.profileSummary}</p>
-      </section>
-      <section className="flex-1">
-        <SectionTitle theme={theme}>Experience</SectionTitle>
-        <div className="space-y-6">
-          {data.experiences.map((exp: any) => (
-            <div key={exp.id}>
-              <div className="flex justify-between items-baseline mb-1">
-                <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
-                <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
-              </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
-              <ul className="space-y-1.5">
-                {exp.bullets.map((b: string, i: number) => <li key={i} className="text-[10.5px] leading-relaxed flex gap-3"><span>•</span> {b}</li>)}
-              </ul>
+      {data.profileSummary && (
+        <section>
+          <SectionTitle theme={theme}>Profile Summary</SectionTitle>
+          <p className="text-[11px] leading-relaxed text-justify" style={{ color: theme.text }}>{data.profileSummary}</p>
+        </section>
+      )}
+      <div className="flex-1 grid grid-cols-1 gap-6">
+        {data.experiences?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Experience</SectionTitle>
+            <div className="space-y-5">
+              {data.experiences.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => <li key={i} className="text-[10.5px] leading-relaxed flex gap-3"><span>•</span> {b}</li>)}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+        )}
+        
+        {data.internships?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Internships</SectionTitle>
+            <div className="space-y-5">
+              {data.internships.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.company}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => <li key={i} className="text-[10.5px] leading-relaxed flex gap-3"><span>•</span> {b}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.projects?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Projects</SectionTitle>
+            <div className="space-y-4">
+              {data.projects.map((proj: any) => (
+                <div key={proj.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{proj.name}</h4>
+                    {proj.link && <span className="text-[9px] font-bold break-all" style={{ color: theme.accent }}>{proj.link}</span>}
+                  </div>
+                  <p className="text-[10.5px] leading-relaxed" style={{ color: theme.text }}>{proj.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.extracurriculars?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Extracurriculars</SectionTitle>
+            <div className="space-y-5">
+              {data.extracurriculars.map((exp: any) => (
+                <div key={exp.id}>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h4 className="text-[13px] font-bold" style={{ color: theme.text }}>{exp.organization}</h4>
+                    <span className="text-[9px] font-bold uppercase" style={{ color: theme.accent }}>{exp.duration}</span>
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-wider mb-2" style={{ color: theme.accent }}>{exp.role}</div>
+                  <ul className="space-y-1.5">
+                    {exp.bullets.map((b: string, i: number) => <li key={i} className="text-[10.5px] leading-relaxed flex gap-3"><span>•</span> {b}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.portfolio?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Portfolio & Output</SectionTitle>
+            <div className="grid grid-cols-2 gap-4">
+              {data.portfolio.map((port: any) => (
+                <div key={port.id} className="p-3 border rounded-lg bg-white/50 border-black/5">
+                  <h4 className="text-[11px] font-bold mb-1" style={{ color: theme.text }}>{port.title}</h4>
+                  {port.link && <div className="text-[9px] font-bold break-all" style={{ color: theme.accent }}>{port.link}</div>}
+                  {port.description && <p className="text-[9px] mt-1 opacity-80" style={{ color: theme.text }}>{port.description}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {data.accomplishments?.length > 0 && (
+          <section>
+            <SectionTitle theme={theme}>Accomplishments</SectionTitle>
+            <div className="space-y-3">
+              {data.accomplishments.map((acc: any) => (
+                <div key={acc.id}>
+                  <h4 className="text-[11px] font-bold mb-1" style={{ color: theme.text }}>• {acc.title}</h4>
+                  {acc.description && <p className="text-[10px] pl-3 opacity-80" style={{ color: theme.text }}>{acc.description}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </main>
     <aside className="p-6 pt-10 flex flex-col gap-6 h-full border-l" style={{ backgroundColor: theme.sidebar, color: '#C8B8A8' }}>
       <div className="flex flex-col items-center mb-4">
@@ -655,6 +989,33 @@ const SplitLayout = ({ data, theme, fonts, groupedSkills }: any) => (
           </div>
         ))}
       </div>
+      {data.education?.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-[8px] font-black tracking-[3px] uppercase border-b pb-1" style={{ color: theme.accent }}>Education</h3>
+          <div className="space-y-3">
+            {data.education.map((edu: any) => (
+              <div key={edu.id}>
+                <div className="text-[10px] font-bold text-white leading-tight">{edu.degree}</div>
+                <div className="text-[8px] opacity-80 mt-0.5">{edu.institution}</div>
+                {edu.duration && <div className="text-[8px] opacity-60">{edu.duration}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {data.trainings?.length > 0 && (
+        <div className="space-y-4">
+          <h3 className="text-[8px] font-black tracking-[3px] uppercase border-b pb-1" style={{ color: theme.accent }}>Trainings</h3>
+          <div className="space-y-3">
+            {data.trainings.map((trn: any) => (
+              <div key={trn.id}>
+                <div className="text-[10px] font-bold text-white leading-tight">{trn.title}</div>
+                <div className="text-[8px] opacity-80 mt-0.5">{trn.institution}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </aside>
   </div>
 );

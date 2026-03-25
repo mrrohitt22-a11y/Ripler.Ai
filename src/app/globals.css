@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 56 75% 89%; /* #FBF8CC Pale Yellow */
-    --foreground: 240 6% 10%; /* #2D3748 Dark Slate */
+    --background: 217 91% 60%; /* #3B82F6 Ocean Blue */
+    --foreground: 0 0% 100%; /* White foreground for better contrast on blue */
     --card: 0 0% 100%; /* White */
     --card-foreground: 240 6% 10%;
     --popover: 0 0% 100%;
@@ -28,7 +28,7 @@
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 240 6% 10%;
     --sidebar-primary: 263 64% 84%;
-    --sidebar-accent: 56 75% 89%;
+    --sidebar-accent: 217 91% 60%;
     --sidebar-border: 27 82% 90%;
   }
 }
