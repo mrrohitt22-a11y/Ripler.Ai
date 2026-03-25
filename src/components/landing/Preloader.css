@@ -1,0 +1,101 @@
+.preloader-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FCFCFD;
+  z-index: 99999;
+  font-family: 'DM Sans', sans-serif;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.preloader-overlay.active {
+  opacity: 1;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand-logo-anim {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #A3C4F3, #CFBAF0);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #09090B;
+  box-shadow: 0 16px 40px rgba(163, 196, 243, 0.4);
+  animation: logoFloat 2.5s ease-in-out infinite, logoPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 16px 40px rgba(163, 196, 243, 0.4); }
+  50% { box-shadow: 0 24px 60px rgba(207, 186, 240, 0.6); }
+}
+
+.loading-bar-container {
+  width: 140px;
+  height: 6px;
+  background: rgba(163, 196, 243, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 50%;
+  background: linear-gradient(90deg, #A3C4F3, #CFBAF0);
+  border-radius: 4px;
+  animation: loadingSlide 1.5s infinite ease-in-out;
+}
+
+@keyframes loadingSlide {
+  0% { left: -50%; width: 50%; }
+  50% { left: 25%; width: 50%; }
+  100% { left: 100%; width: 50%; }
+}
+
+.loading-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #27272A;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.loading-text span {
+  animation: blink 1.4s infinite both;
+  font-size: 1.2rem;
+  line-height: 0;
+  margin-top: 4px;
+}
+
+.loading-text .dot-1 { animation-delay: 0s; }
+.loading-text .dot-2 { animation-delay: 0.2s; }
+.loading-text .dot-3 { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}

@@ -9,14 +9,24 @@ import { LandingHero } from '@/components/landing/LandingHero';
 import { LandingSections } from '@/components/landing/LandingSections';
 import { LandingBottom } from '@/components/landing/LandingBottom';
 import { AuthModal } from '@/components/landing/AuthModal';
+import { Preloader } from '@/components/landing/Preloader';
 import './landing.css';
 
 export default function LandingPage() {
+  const [isPreloading, setIsPreloading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTab, setModalTab] = useState<'login' | 'signup'>('login');
   const router = useRouter();
   const { user, isUserLoading } = useUser();
   const auth = useAuth();
+
+  // Minimum display timer for the preloader animation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPreloading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // If user is already logged in, redirect to builder
   useEffect(() => {
@@ -66,13 +76,9 @@ export default function LandingPage() {
     }
   };
 
-  // Show nothing while checking auth
-  if (isUserLoading) {
-    return (
-      <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',background:'#F8F9FF'}}>
-        <div style={{fontFamily:"'Sora',sans-serif",fontSize:'1.2rem',fontWeight:700,color:'#3B5BDB'}}>Loading...</div>
-      </div>
-    );
+  // Show attractive preloader while checking auth or during intro
+  if (isPreloading || isUserLoading) {
+    return <Preloader />;
   }
 
   // If user is logged in, don't show landing (redirect will happen)
