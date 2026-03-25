@@ -50,19 +50,41 @@ export function LandingSections({ onOpenModal }: Props) {
           <div className="section-tag">Powerful Features</div>
           <h2 className="section-title">6 features to boost<br/><span className="hl">your job search</span></h2>
         </div>
-        <div className="features-grid">
-          {[{icon:'🎨',title:'35+ Template Designs',desc:'Recruiter-approved, ATS-friendly templates for every industry.'},
-            {icon:'🤖',title:'Enhance with AI',desc:'AI rewrites your bullet points and optimizes for keywords.'},
-            {icon:'📊',title:'Resume Review & ATS Score',desc:'Get a live ATS score and actionable suggestions.'},
-            {icon:'🤖',title:'AI Cover Letter Builder',desc:'Generate a tailored cover letter in under 30 seconds.'},
-            {icon:'🌐',title:'Resume Website',desc:'Turn your resume into a shareable online profile.'},
-            {icon:'📍',title:'Resume Tracking',desc:'Track where you applied and follow up at the right time.'}
-          ].map((f, i) => (
-            <div key={i} className={`feature-card reveal reveal-delay-${(i % 3) + 1}`} onClick={() => onOpenModal('signup')}>
-              <div className="feature-card-img">{f.icon}</div>
-              <div className="feature-card-body"><h4>{f.title}</h4><p>{f.desc}</p></div>
-            </div>
-          ))}
+        <div className="relative p-6 sm:p-10 rounded-[2.5rem] bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] mx-auto mt-12 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: '📄', title: '35+ Templates', desc: 'Recruiter-approved, ATS-friendly templates for every industry.', color: 'from-white/80 to-[#EAF5ED]' },
+              { icon: '🤖', title: 'Enhance with AI', desc: 'AI rewrites your bullet points and optimizes for keywords.', color: 'from-white/80 to-[#E4F0FB]' },
+              { icon: '🚀', title: 'Check ATS Score', desc: 'Get a live ATS score and actionable suggestions.', color: 'from-white/80 to-[#EEECF8]' },
+              { icon: '✉️', title: 'Cover Letters', desc: 'Generate a tailored cover letter in under 30 seconds.', color: 'from-white/80 to-[#EBEBF4]' },
+              { icon: '🌐', title: 'Resume Website', desc: 'Turn your resume into a shareable online profile.', color: 'from-white/80 to-[#FCEFDA]' },
+              { icon: '📍', title: 'Resume Tracking', desc: 'Track where you applied and follow up at the right time.', color: 'from-white/80 to-[#E3F2EE]' }
+            ].map((f, i) => (
+              <div key={i} onClick={() => onOpenModal('signup')} className={`rounded-3xl p-7 bg-gradient-to-br ${f.color} border border-white hover:border-white/50 shadow-sm flex flex-col justify-between min-h-[240px] cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] reveal reveal-delay-${(i % 3) + 1}`}>
+                <div className="flex justify-between items-start mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-sm text-[22px]">
+                      {f.icon}
+                    </div>
+                    <div className="flex gap-1.5 opacity-30 mix-blend-multiply">
+                      <div className="w-2 h-2 rounded-sm bg-black" />
+                      <div className="w-2 h-4 rounded-sm bg-black" />
+                    </div>
+                  </div>
+                  <div className="w-3.5 h-3.5 rounded-full border-[2px] border-black/15" />
+                </div>
+                <div>
+                  <h4 className="font-extrabold text-[22px] mb-3 text-black leading-tight tracking-tight" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h4>
+                  <p className="text-[13px] leading-relaxed text-black/60 font-medium mb-8">
+                    {f.desc}
+                  </p>
+                </div>
+                <div className="self-end bg-black/25 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] text-white/95 font-bold tracking-widest uppercase flex items-center gap-2 transition-transform hover:scale-105">
+                  <span className="w-1.5 h-1.5 rounded-full border-2 border-white/60" /> Explore
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div style={{textAlign:'center',marginTop:'32px'}} className="reveal">
           <a href="#" className="btn-primary" onClick={(e) => { e.preventDefault(); onOpenModal('signup'); }} style={{display:'inline-flex'}}>Choose a Template →</a>
