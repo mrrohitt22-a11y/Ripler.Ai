@@ -262,6 +262,161 @@ export function LandingSections({ onOpenModal }: Props) {
               <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-black text-white font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
             </div>
           </div>
+
+          {/* Template 5: Tech Modern */}
+          <div className="group relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-1">
+            <div className="flex-1 w-full relative">
+              <div className="h-14 bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] w-full flex items-end px-4 pb-2">
+                <div className="flex gap-2 items-center">
+                  <div className="w-7 h-7 rounded-md bg-cyan-400/30 border border-cyan-400/40"></div>
+                  <div className="space-y-1">
+                    <div className="h-2 w-16 bg-white/90 rounded"></div>
+                    <div className="h-1 w-10 bg-cyan-300/60 rounded"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 space-y-3">
+                <div className="flex gap-1.5">
+                  <div className="px-2 py-0.5 bg-cyan-50 border border-cyan-200 rounded-full h-3 w-8"></div>
+                  <div className="px-2 py-0.5 bg-blue-50 border border-blue-200 rounded-full h-3 w-10"></div>
+                  <div className="px-2 py-0.5 bg-indigo-50 border border-indigo-200 rounded-full h-3 w-7"></div>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1.5 w-1/3 bg-[#0f172a] rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-3/4 bg-gray-200 rounded"></div>
+                </div>
+                <div className="space-y-2 pt-1">
+                  <div className="h-1.5 w-1/3 bg-[#0f172a] rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-5/6 bg-gray-200 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Tech Modern</div>
+            <div className="absolute inset-0 bg-[#0f172a]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-cyan-400 text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 6: Coral Accent */}
+          <div className="group relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-2">
+            <div className="flex-1 w-full p-4 space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FFCFD2] to-[#F1C0E8] flex-shrink-0"></div>
+                <div className="space-y-1.5 flex-1">
+                  <div className="h-2.5 w-3/4 bg-gray-800 rounded"></div>
+                  <div className="h-1.5 w-1/2 bg-[#FFCFD2] rounded"></div>
+                </div>
+              </div>
+              <div className="h-0.5 bg-gradient-to-r from-[#FFCFD2] to-transparent"></div>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="space-y-1.5 col-span-2">
+                  <div className="h-1.5 w-2/3 bg-[#FFCFD2] rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-5/6 bg-gray-200 rounded"></div>
+                  <div className="h-1.5 w-2/3 bg-[#FFCFD2] rounded mt-3"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-200 rounded"></div>
+                </div>
+                <div className="space-y-2 border-l border-gray-100 pl-2">
+                  <div className="h-1 w-full bg-[#FFCFD2]/60 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-200 rounded"></div>
+                  <div className="h-1 w-full bg-[#FFCFD2]/60 rounded mt-3"></div>
+                  <div className="h-1 w-3/4 bg-gray-200 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Coral Accent</div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FFCFD2]/90 to-[#F1C0E8]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-white text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 7: Two-Column Pro */}
+          <div className="group relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-3">
+            <div className="flex-1 w-full flex">
+              <div className="w-[40%] bg-gradient-to-b from-[#B9FBC0] to-[#98E6A8] p-3 flex flex-col gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/40 border-2 border-white mx-auto"></div>
+                <div className="space-y-1.5">
+                  <div className="h-1.5 w-full bg-white/80 rounded"></div>
+                  <div className="h-1 w-2/3 bg-white/50 rounded"></div>
+                </div>
+                <div className="space-y-1.5 mt-2">
+                  <div className="h-1.5 w-1/2 bg-white/80 rounded"></div>
+                  <div className="flex gap-1">
+                    <div className="h-1.5 flex-1 bg-white/40 rounded-full"></div>
+                    <div className="h-1.5 flex-1 bg-white/40 rounded-full"></div>
+                  </div>
+                  <div className="flex gap-1">
+                    <div className="h-1.5 flex-1 bg-white/40 rounded-full"></div>
+                    <div className="h-1.5 w-1/3 bg-white/40 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="w-[60%] p-3 space-y-3">
+                <div className="space-y-2 pb-2 border-b border-gray-100">
+                  <div className="h-2 w-2/3 bg-gray-800 rounded"></div>
+                  <div className="h-1 w-1/2 bg-gray-400 rounded"></div>
+                </div>
+                <div className="space-y-1.5">
+                  <div className="h-1.5 w-1/3 bg-green-600 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-4/5 bg-gray-200 rounded"></div>
+                </div>
+                <div className="space-y-1.5">
+                  <div className="h-1.5 w-1/3 bg-green-600 rounded"></div>
+                  <div className="h-1 w-full bg-gray-200 rounded"></div>
+                  <div className="h-1 w-5/6 bg-gray-200 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-white border-t border-gray-100 text-sm font-bold text-gray-800 text-center">Two-Column Pro</div>
+            <div className="absolute inset-0 bg-[#2F9E44]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-white text-gray-900 font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
+          {/* Template 8: Mono Elegant */}
+          <div className="group relative bg-[#f8f5f0] border border-[#e8e0d5] rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 aspect-[1/1.4] flex flex-col cursor-pointer hover:-translate-y-2 overflow-hidden reveal reveal-delay-4">
+            <div className="flex-1 w-full p-5 space-y-4">
+              <div className="text-center space-y-1.5 pb-3 border-b-2 border-[#2d2d2d]">
+                <div className="h-3 w-2/3 bg-[#2d2d2d] rounded mx-auto"></div>
+                <div className="flex justify-center gap-3 mt-2">
+                  <div className="h-1 w-6 bg-[#8b8072] rounded"></div>
+                  <div className="h-1 w-0.5 bg-[#8b8072] rounded"></div>
+                  <div className="h-1 w-6 bg-[#8b8072] rounded"></div>
+                  <div className="h-1 w-0.5 bg-[#8b8072] rounded"></div>
+                  <div className="h-1 w-6 bg-[#8b8072] rounded"></div>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="h-1.5 w-1/3 bg-[#2d2d2d] rounded tracking-widest"></div>
+                <div className="h-1 w-full bg-[#d4cdc3] rounded"></div>
+                <div className="h-1 w-full bg-[#d4cdc3] rounded"></div>
+                <div className="h-1 w-4/5 bg-[#d4cdc3] rounded"></div>
+              </div>
+              <div className="space-y-2 pt-1">
+                <div className="h-1.5 w-1/3 bg-[#2d2d2d] rounded"></div>
+                <div className="flex gap-2">
+                  <div className="h-1 w-1/3 bg-[#d4cdc3] rounded"></div>
+                  <div className="h-1 w-1/4 bg-[#2d2d2d] rounded"></div>
+                </div>
+                <div className="flex gap-2">
+                  <div className="h-1 w-1/3 bg-[#d4cdc3] rounded"></div>
+                  <div className="h-1 w-1/5 bg-[#2d2d2d] rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="py-3 px-4 bg-[#f8f5f0] border-t border-[#e8e0d5] text-sm font-bold text-[#2d2d2d] text-center">Mono Elegant</div>
+            <div className="absolute inset-0 bg-[#2d2d2d]/90 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <button onClick={() => onOpenModal('signup')} className="px-5 py-2.5 bg-[#f8f5f0] text-[#2d2d2d] font-bold rounded-lg shadow-lg hover:scale-105 transition-transform text-sm">Use Template</button>
+            </div>
+          </div>
+
         </div>
       </section>
     </>
